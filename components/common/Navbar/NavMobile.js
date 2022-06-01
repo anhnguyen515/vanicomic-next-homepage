@@ -6,6 +6,7 @@ import NavAuth from "./NavAuth";
 import NavLink from "./NavLink";
 import NavAuthDropdown from "./NavAuthDropdown";
 import NavSearch from "./NavSearch";
+import NavPublish from "./NavPublish";
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState(false);
@@ -57,8 +58,9 @@ export default function TemporaryDrawer() {
                 mb: 2,
               }}
             />
+            <NavPublish />
             <NavAuthDropdown>
-              <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <Box sx={{ width: "100%" }}>
                 <NavAuth />
               </Box>
             </NavAuthDropdown>

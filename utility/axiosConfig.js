@@ -1,8 +1,9 @@
 import axios from "axios";
 import jsCookie from "js-cookie";
+import { DJANGO_BASE_URL } from "./constants";
 
 const axiosClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+  baseURL: DJANGO_BASE_URL,
   xsrfCookieName: "csrftoken",
   withCredentials: false,
   xsrfHeaderName: "X-CSRFToken",

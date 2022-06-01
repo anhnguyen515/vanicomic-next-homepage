@@ -50,15 +50,18 @@ export function timesFromNow(dateString) {
   return dayjs(date).fromNow();
 }
 
-export function numberFormat(views) {
+export function numberFormat(numbers) {
   const THOUSAND = 1000;
   const MILLION = 1000000;
+  const BILLION = 1000000000;
 
-  if (views >= THOUSAND && views < MILLION) {
-    return parseFloat(views / THOUSAND).toFixed(1) + "K";
-  } else if (views >= MILLION) {
-    return parseFloat(views / MILLION).toFixed(1) + "M";
+  if (numbers >= THOUSAND && numbers < MILLION) {
+    return parseFloat(numbers / THOUSAND).toFixed(1) + "K";
+  } else if (numbers >= MILLION && numbers < BILLION) {
+    return parseFloat(numbers / MILLION).toFixed(1) + "M";
+  } else if (numbers >= BILLION) {
+    return parseFloat(numbers / BILLION).toFixed(1) + "B";
   } else {
-    return views;
+    return numbers;
   }
 }
