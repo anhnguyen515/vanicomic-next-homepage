@@ -18,7 +18,6 @@ export default function ComicSquareCard({ comic }) {
             aspectRatio: "1",
             position: "relative",
             "&>:last-child": {
-              transition: "all 0.5s",
               display: "none",
             },
             "&:hover": {
@@ -40,7 +39,7 @@ export default function ComicSquareCard({ comic }) {
               height: "100%",
             }}
           >
-            <Typography variant="h6" sx={{ lineHeight: 1 }} gutterBottom>
+            <Typography variant="h6" sx={{ lineHeight: 1.1 }} gutterBottom>
               {comic.name}
             </Typography>
             <Typography
@@ -65,26 +64,39 @@ export default function ComicSquareCard({ comic }) {
               left: 0,
               right: 0,
               bottom: 0,
+              height: "100%",
               p: 2,
               pt: 1,
               pb: 1,
             }}
           >
-            {/* <Typography variant="h6" sx={{ lineHeight: 1 }} gutterBottom>
-            {comic.name}
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            fontWeight={500}
-            sx={{ pb: 1, borderBottom: 1, borderColor: "text.light" }}
-            gutterBottom
-          >
-            {comic.user.username}
-          </Typography> */}
             <Typography
+              variant="h6"
               sx={{
+                lineHeight: 1,
                 overflow: "hidden",
-                height: "100%",
+                whiteSpace: "nowrap",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {comic.name}
+            </Typography>
+            <Typography variant="subtitle1" fontWeight={500} gutterBottom>
+              {comic.user.username}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                mt: 1,
+                lineHeight: 1.2,
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: {
+                  xs: 7,
+                  xl: 10,
+                },
+                overflow: "hidden",
+                textOverflow: "ellipsis",
               }}
             >
               {comic.summary}

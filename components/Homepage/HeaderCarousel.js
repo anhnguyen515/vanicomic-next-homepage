@@ -34,7 +34,7 @@ export default function HeaderCarousel({ comics }) {
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
-                filter: "blur(1.5rem)",
+                filter: "blur(0.5rem)",
               }}
             ></Box>
             <Box

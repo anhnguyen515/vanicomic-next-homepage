@@ -51,17 +51,15 @@ export function timesFromNow(dateString) {
 }
 
 export function numberFormat(numbers) {
-  const THOUSAND = 1000;
+  // const THOUSAND = 1000;
   const MILLION = 1000000;
   const BILLION = 1000000000;
 
-  if (numbers >= THOUSAND && numbers < MILLION) {
-    return parseFloat(numbers / THOUSAND).toFixed(1) + "K";
-  } else if (numbers >= MILLION && numbers < BILLION) {
+  if (numbers >= MILLION && numbers < BILLION) {
     return parseFloat(numbers / MILLION).toFixed(1) + "M";
   } else if (numbers >= BILLION) {
     return parseFloat(numbers / BILLION).toFixed(1) + "B";
   } else {
-    return numbers;
+    return numbers.toLocaleString("en-US");
   }
 }

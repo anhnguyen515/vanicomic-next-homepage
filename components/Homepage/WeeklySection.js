@@ -44,12 +44,13 @@ export default function BasicTabs({ comics }) {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+      <Box>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
           centered
+          //   variant="scrollable"
         >
           <Tab label="Thứ Hai" {...a11yProps(0)} />
           <Tab label="Thứ Ba" {...a11yProps(1)} />
@@ -65,7 +66,7 @@ export default function BasicTabs({ comics }) {
           {comics
             .filter((comic) => comic.comic_weekday === "MO")
             .map((comic) => (
-              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4} xl={2}>
+              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
               </Grid>
             ))}
@@ -76,7 +77,7 @@ export default function BasicTabs({ comics }) {
           {comics
             .filter((comic) => comic.comic_weekday === "TU")
             .map((comic) => (
-              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4} xl={2}>
+              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
               </Grid>
             ))}
@@ -87,7 +88,7 @@ export default function BasicTabs({ comics }) {
           {comics
             .filter((comic) => comic.comic_weekday === "WE")
             .map((comic) => (
-              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4} xl={2}>
+              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
               </Grid>
             ))}
@@ -98,7 +99,7 @@ export default function BasicTabs({ comics }) {
           {comics
             .filter((comic) => comic.comic_weekday === "TH")
             .map((comic) => (
-              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4} xl={2}>
+              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
               </Grid>
             ))}
@@ -109,7 +110,7 @@ export default function BasicTabs({ comics }) {
           {comics
             .filter((comic) => comic.comic_weekday === "FR")
             .map((comic) => (
-              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4} xl={2}>
+              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
               </Grid>
             ))}
@@ -120,7 +121,7 @@ export default function BasicTabs({ comics }) {
           {comics
             .filter((comic) => comic.comic_weekday === "SA")
             .map((comic) => (
-              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4} xl={2}>
+              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
               </Grid>
             ))}
@@ -131,7 +132,7 @@ export default function BasicTabs({ comics }) {
           {comics
             .filter((comic) => comic.comic_weekday === "SU")
             .map((comic) => (
-              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4} xl={2}>
+              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
               </Grid>
             ))}

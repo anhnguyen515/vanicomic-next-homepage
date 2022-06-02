@@ -24,8 +24,8 @@ export default function Navbar() {
                   <Image
                     src="/origin-logo-black.svg"
                     alt={`${BRAND_NAME} logo`}
-                    width={70}
-                    height={70}
+                    width={80}
+                    height={80}
                     layout="fixed"
                   />
                 </Box>

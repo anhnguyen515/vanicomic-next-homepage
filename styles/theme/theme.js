@@ -79,9 +79,9 @@ export const lightTheme = createTheme({
   //   values: {
   //     xs: 0,
   //     sm: 480, //default: 600
-  //     md: 600, //default: 960
-  //     lg: 960, //default: 1280
-  //     xl: 1280, //default: 1920
+  //     md: 600, //default: 900
+  //     lg: 960, //default: 1200
+  //     xl: 1280, //default: 1536
   //   },
   // },
 });
