@@ -54,16 +54,18 @@ export default function TemporaryDrawer() {
               sx={{
                 mr: 1,
                 ml: 1,
-                mt: 2,
+                // mt: 2,
                 mb: 2,
               }}
             />
-            <NavPublish />
-            <NavAuthDropdown>
-              <Box sx={{ width: "100%" }}>
-                <NavAuth />
-              </Box>
-            </NavAuthDropdown>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              <NavPublish />
+              <NavAuthDropdown>
+                <Box sx={{ display: "flex", flexDirection: "column" }}>
+                  <NavAuth />
+                </Box>
+              </NavAuthDropdown>
+            </Box>
           </Box>
         </Drawer>
       </React.Fragment>

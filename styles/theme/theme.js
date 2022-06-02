@@ -17,9 +17,9 @@ export const lightTheme = createTheme({
   palette: {
     mode: "light",
     primary: {
-      light: indigo[400],
-      main: indigo[500],
-      dark: indigo[700],
+      light: teal[400],
+      main: teal[500],
+      dark: teal[700],
     },
 
     secondary: {

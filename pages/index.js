@@ -6,6 +6,7 @@ import axiosClient from "utility/axiosConfig";
 import ComicSquareCard from "components/common/ComicSquareCard";
 import WeeklySection from "components/Homepage/WeeklySection";
 import NewComicsSection from "components/Homepage/NewComicsSection";
+import CategoryTitle from "components/common/CategoryTitle";
 
 export async function getServerSideProps() {
   const comics = await axiosClient
@@ -30,42 +31,21 @@ export default function Home({ comics }) {
         {/* truyện hàng tuần */}
         <Box mb={3} sx={{ padding: 3 }}>
           <Divider>
-            <Typography
-              variant="h4"
-              fontWeight={500}
-              textAlign="center"
-              gutterBottom
-            >
-              Truyện hàng tuần
-            </Typography>
+            <CategoryTitle>Truyện hàng tuần</CategoryTitle>
           </Divider>
           <WeeklySection comics={comics} />
         </Box>
         {/* truyện mới ra mắt */}
         <Box mb={3} sx={{ padding: 3 }}>
           <Divider>
-            <Typography
-              variant="h4"
-              fontWeight={500}
-              textAlign="center"
-              gutterBottom
-            >
-              Truyện mới
-            </Typography>
+            <CategoryTitle>Truyện mới</CategoryTitle>
           </Divider>
           <NewComicsSection comics={comics} />
         </Box>
         {/* truyện theo thể loại */}
         <Box mb={3} sx={{ padding: 3 }}>
           <Divider>
-            <Typography
-              variant="h4"
-              fontWeight={500}
-              textAlign="center"
-              gutterBottom
-            >
-              Thể loại
-            </Typography>
+            <CategoryTitle>Thể loại</CategoryTitle>
           </Divider>
         </Box>
       </Container>
