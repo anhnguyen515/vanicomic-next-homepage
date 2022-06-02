@@ -18,7 +18,7 @@ export default function HeaderCarousel({ comics }) {
   return (
     <Box>
       <Slider {...settings}>
-        {comics.map((comic) => (
+        {comics.slice(0, 10).map((comic) => (
           <Box
             key={comic.id}
             sx={{ position: "relative", height: "33rem", width: "100%" }}

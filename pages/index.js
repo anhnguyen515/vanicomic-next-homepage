@@ -1,9 +1,10 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import HeadPage from "components/common/HeadPage";
 import { BRAND_NAME } from "utility/constants";
 import HeaderCarousel from "components/Homepage/HeaderCarousel";
 import axiosClient from "utility/axiosConfig";
 import ComicSquareCard from "components/common/ComicSquareCard";
+import WeeklySection from "components/Homepage/WeeklySection";
 
 export async function getServerSideProps() {
   const comics = await axiosClient
@@ -21,18 +22,15 @@ export default function Home({ comics }) {
   return (
     <>
       <HeadPage title={`${BRAND_NAME.toUpperCase()} - Đọc Truyện Online`} />
-      <Box mb={2}>
+      <Box mb={3}>
         <HeaderCarousel comics={comics} />
       </Box>
       <Container maxWidth="2xl">
-        <Box sx={{ padding: 3 }}>
-          <Grid container spacing={3}>
-            {comics.map((comic) => (
-              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4} xl={2}>
-                <ComicSquareCard comic={comic} />
-              </Grid>
-            ))}
-          </Grid>
+        <Box mb={3} sx={{ padding: 3 }}>
+          <Typography variant="h4" fontWeight={500} textAlign="center">
+            Phát hành hàng tuần
+          </Typography>
+          <WeeklySection comics={comics} />
         </Box>
       </Container>
     </>
