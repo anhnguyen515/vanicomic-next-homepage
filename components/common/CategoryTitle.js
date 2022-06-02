@@ -25,7 +25,7 @@ export default function CategoryTitle({ children }) {
           "&::before": {
             content: '""',
             position: "absolute",
-            left: 10,
+            left: 100,
             right: -10,
             bottom: -10,
             height: "2.8rem",

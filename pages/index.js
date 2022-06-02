@@ -7,6 +7,7 @@ import ComicSquareCard from "components/common/ComicSquareCard";
 import WeeklySection from "components/Homepage/WeeklySection";
 import NewComicsSection from "components/Homepage/NewComicsSection";
 import CategoryTitle from "components/common/CategoryTitle";
+import GenresSection from "components/Homepage/GenresSection";
 
 export async function getServerSideProps() {
   const comics = await axiosClient
@@ -47,6 +48,7 @@ export default function Home({ comics }) {
           <Divider>
             <CategoryTitle>Thể loại</CategoryTitle>
           </Divider>
+          <GenresSection comics={comics} />
         </Box>
       </Container>
     </>

@@ -5,6 +5,7 @@ import Tabs from "@mui/material/Tabs";
 import ComicSquareCard from "components/common/ComicSquareCard";
 import PropTypes from "prop-types";
 import * as React from "react";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -35,8 +36,8 @@ function a11yProps(index) {
   };
 }
 
-export default function WeeklySection({ comics }) {
-  const [value, setValue] = React.useState(() => new Date().getDay() - 1);
+export default function GenresSection({ comics }) {
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -52,19 +53,24 @@ export default function WeeklySection({ comics }) {
           centered
           //   variant="scrollable"
         >
-          <Tab label="Thứ Hai" {...a11yProps(0)} />
-          <Tab label="Thứ Ba" {...a11yProps(1)} />
-          <Tab label="Thứ Tư" {...a11yProps(2)} />
-          <Tab label="Thứ Năm" {...a11yProps(3)} />
-          <Tab label="Thứ Sáu" {...a11yProps(4)} />
-          <Tab label="Thứ Bảy" {...a11yProps(5)} />
-          <Tab label="Chủ Nhật" {...a11yProps(6)} />
+          <Tab label="Drama" {...a11yProps(0)} />
+          <Tab label="Huyền Ảo" {...a11yProps(1)} />
+          <Tab label="Hài Hước" {...a11yProps(2)} />
+          <Tab label="Hành Động" {...a11yProps(3)} />
+          <Tab label="Slice of Life" {...a11yProps(4)} />
+          <Tab label="Lãng Mạn" {...a11yProps(5)} />
+          <Tab
+            label="Các thể loại khác"
+            icon={<ArrowRightIcon />}
+            iconPosition="end"
+            {...a11yProps(6)}
+          />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
         <Grid container spacing={3}>
           {comics
-            .filter((comic) => comic.comic_weekday === "MO")
+            .filter((comic) => comic.genre.slug === "drama")
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -75,7 +81,7 @@ export default function WeeklySection({ comics }) {
       <TabPanel value={value} index={1}>
         <Grid container spacing={3}>
           {comics
-            .filter((comic) => comic.comic_weekday === "TU")
+            .filter((comic) => comic.genre.slug === "huyen-ao")
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -86,7 +92,7 @@ export default function WeeklySection({ comics }) {
       <TabPanel value={value} index={2}>
         <Grid container spacing={3}>
           {comics
-            .filter((comic) => comic.comic_weekday === "WE")
+            .filter((comic) => comic.genre.slug === "hai-huoc")
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -97,7 +103,7 @@ export default function WeeklySection({ comics }) {
       <TabPanel value={value} index={3}>
         <Grid container spacing={3}>
           {comics
-            .filter((comic) => comic.comic_weekday === "TH")
+            .filter((comic) => comic.genre.slug === "hanh-dong")
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -108,7 +114,7 @@ export default function WeeklySection({ comics }) {
       <TabPanel value={value} index={4}>
         <Grid container spacing={3}>
           {comics
-            .filter((comic) => comic.comic_weekday === "FR")
+            .filter((comic) => comic.genre.slug === "slice-of-life")
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -119,18 +125,7 @@ export default function WeeklySection({ comics }) {
       <TabPanel value={value} index={5}>
         <Grid container spacing={3}>
           {comics
-            .filter((comic) => comic.comic_weekday === "SA")
-            .map((comic) => (
-              <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
-                <ComicSquareCard comic={comic} />
-              </Grid>
-            ))}
-        </Grid>
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        <Grid container spacing={3}>
-          {comics
-            .filter((comic) => comic.comic_weekday === "SU")
+            .filter((comic) => comic.genre.slug === "lang-man")
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
