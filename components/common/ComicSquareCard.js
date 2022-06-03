@@ -1,7 +1,9 @@
 import { Box, Chip, Divider, Paper, Typography } from "@mui/material";
 import React from "react";
 import { numberFormat } from "utility/utils";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import GroupIcon from "@mui/icons-material/Group";
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import Link from "next/link";
 
 export default function ComicSquareCard({ comic }) {
@@ -10,36 +12,31 @@ export default function ComicSquareCard({ comic }) {
       <Link href={`/truyen/${comic.id}`} passHref>
         <Paper
           sx={{
-            //   backgroundImage: `linear-gradient(to bottom, rgba(241, 241, 241, 0.7), rgba(241, 241, 241, 0.7)),url(${comic.cover})`,
-            //   backgroundImage: `url(${comic.cover})`,
-            // backgroundRepeat: "no-repeat",
-            // backgroundPosition: "center",
             cursor: "pointer",
             aspectRatio: "1",
             position: "relative",
-            "&>:last-child": {
-              display: "none",
-            },
-            "&:hover": {
-              "&>:last-child": {
-                display: "block",
-              },
-            },
           }}
         >
           <Paper
             elevation={0}
             sx={{
-              p: 2,
-              pt: 1,
-              pb: 1,
+              backgroundImage: `linear-gradient(to bottom, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.7)),url(${comic.cover})`,
+              // backgroundImage: `url(${comic.cover})`,
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              height: "100%",
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
-              height: "100%",
+              padding: 1,
             }}
           >
-            <Typography variant="h6" sx={{ lineHeight: 1.1 }} gutterBottom>
+            <Typography
+              variant="h6"
+              color="text.light"
+              sx={{ lineHeight: 1.1 }}
+              gutterBottom
+            >
               {comic.name}
             </Typography>
             <Typography
@@ -48,16 +45,31 @@ export default function ComicSquareCard({ comic }) {
               fontWeight={500}
               sx={{ display: "flex", alignItems: "center", gap: 1 }}
             >
-              <ThumbUpIcon fontSize="small" /> {numberFormat(comic.likes)}
+              <VisibilityIcon fontSize="small" /> {numberFormat(comic.views)}
             </Typography>
-            <Typography sx={{ mt: "auto", color: comic.genre.main_color }}>
-              {comic.genre.name}
+            <Typography
+              color="primary"
+              fontSize="1.1rem"
+              fontWeight={500}
+              sx={{ display: "flex", alignItems: "center", gap: 1 }}
+            >
+              <FavoriteIcon fontSize="small" /> {numberFormat(comic.likes)}
             </Typography>
+            <Chip
+              label={comic.genre.name}
+              size="small"
+              sx={{
+                mt: "auto",
+                backgroundColor: comic.genre.main_color,
+                color: "text.light",
+              }}
+            />
           </Paper>
           <Paper
             elevation={0}
             sx={{
               backgroundColor: comic.genre.main_color,
+              padding: 1,
               color: "text.light",
               position: "absolute",
               top: 0,
@@ -65,42 +77,32 @@ export default function ComicSquareCard({ comic }) {
               right: 0,
               bottom: 0,
               height: "100%",
-              p: 2,
-              pt: 1,
-              pb: 1,
+              opacity: 0,
+              overflow: "hidden",
+              transition: "opacity 0.2s",
+              "&:hover": {
+                opacity: 1,
+              },
             }}
           >
             <Typography
               variant="h6"
+              color="text.light"
               sx={{
-                lineHeight: 1,
+                lineHeight: 1.1,
                 overflow: "hidden",
                 whiteSpace: "nowrap",
                 textOverflow: "ellipsis",
               }}
+              gutterBottom
             >
               {comic.name}
             </Typography>
-            <Typography variant="subtitle1" fontWeight={500} gutterBottom>
-              {comic.user.username}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                mt: 1,
-                lineHeight: 1.2,
-                display: "-webkit-box",
-                WebkitBoxOrient: "vertical",
-                WebkitLineClamp: {
-                  xs: 7,
-                  xl: 10,
-                },
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-              }}
-            >
-              {comic.summary}
-            </Typography>
+            <Typography fontWeight={500}>{comic.user.username}</Typography>
+            <Divider
+              sx={{ backgroundColor: "text.light", width: 25, mt: 1, mb: 1 }}
+            />
+            <Typography>{comic.summary}</Typography>
           </Paper>
         </Paper>
       </Link>

@@ -5,7 +5,7 @@ export default function NavPublish() {
   return (
     <>
       <Button color="primary" size="small" variant="contained">
-        Đăng truyện
+        Đăng tải truyện
       </Button>
     </>
   );

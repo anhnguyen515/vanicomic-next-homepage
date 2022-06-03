@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 import axiosClient from "utility/axiosConfig";
 

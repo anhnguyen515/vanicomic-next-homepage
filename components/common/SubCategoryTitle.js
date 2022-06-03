@@ -1,49 +1,48 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { orange } from "@mui/material/colors";
 import React from "react";
 
-export default function CategoryTitle({ children }) {
+export default function SubCategoryTitle({ children }) {
   return (
     <>
       <Typography
-        variant="h4"
+        variant="h5"
         fontWeight={500}
         gutterBottom
         sx={{
           display: "inline-block",
-          backgroundColor: "primary.main",
+          backgroundColor: "secondary.main",
           borderRadius: 1,
           color: "text.light",
           pl: 2,
           pr: 2,
-          ml: 2,
           mr: 2,
-          height: "2.8rem",
-          lineHeight: "2.8rem",
+          height: "2.4rem",
+          lineHeight: "2.4rem",
           width: "auto",
           position: "relative",
           "&::before": {
             content: '""',
             position: "absolute",
+            top: 0,
             left: 10,
             right: -10,
-            bottom: -10,
-            height: "2.8rem",
-            backgroundColor: "primary.dark",
+            bottom: 0,
+            backgroundColor: "secondary.dark",
             borderRadius: 1,
-            transform: "skewX(-15deg)",
+            transform: "skewX(-30deg)",
             zIndex: -1,
           },
           "&::after": {
             content: '""',
             position: "absolute",
-            left: -10,
-            right: 10,
-            bottom: -10,
-            height: "2.8rem",
-            backgroundColor: "primary.dark",
+            top: 0,
+            left: 10,
+            right: -10,
+            bottom: 0,
+            backgroundColor: "secondary.dark",
             borderRadius: 1,
-            transform: "skewX(15deg)",
+            transform: "skewX(30deg)",
             zIndex: -1,
           },
         }}

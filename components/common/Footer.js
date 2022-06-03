@@ -16,7 +16,7 @@ import { BRAND_NAME } from "utility/constants";
 export default function Footer() {
   return (
     <>
-      <Box sx={{ backgroundColor: "secondary.main", color: "text.main" }}>
+      <Box sx={{ backgroundColor: "sub.main", color: "text.main" }}>
         <Container maxWidth="2xl">
           <Box
             sx={{
@@ -61,7 +61,7 @@ export default function Footer() {
       </Box>
 
       {/* thông tin về Vietnovel */}
-      <Box sx={{ backgroundColor: "secondary.dark", color: "text.main" }}>
+      <Box sx={{ backgroundColor: "sub.dark", color: "text.main" }}>
         <Container maxWidth="2xl">
           <Box sx={{ padding: 3 }}>
             <Box sx={{ textAlign: "center" }}>

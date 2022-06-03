@@ -33,7 +33,7 @@ export default function TemporaryDrawer() {
       }}
     >
       <React.Fragment key={"right"}>
-        <IconButton onClick={toggleDrawer("right", true)} color="secondary">
+        <IconButton onClick={toggleDrawer("right", true)} color="inherit">
           <MenuIcon />
         </IconButton>
         <Drawer

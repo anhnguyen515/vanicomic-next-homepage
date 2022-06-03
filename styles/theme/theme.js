@@ -23,16 +23,15 @@ export const lightTheme = createTheme({
     },
 
     secondary: {
-      light: blueGrey[200],
-      main: "#222731",
-      dark: "#1F212D",
-    },
-
-    form: {
-      light: indigo[50],
+      light: indigo[400],
       main: indigo[500],
       dark: indigo[700],
-      contrastText: "#fff",
+    },
+
+    sub: {
+      light: blueGrey[50],
+      main: "#222731",
+      dark: "#1F212D",
     },
 
     notification: {

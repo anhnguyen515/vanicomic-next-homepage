@@ -5,6 +5,8 @@ import Tabs from "@mui/material/Tabs";
 import ComicSquareCard from "components/common/ComicSquareCard";
 import PropTypes from "prop-types";
 import * as React from "react";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import Link from "next/link";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -59,12 +61,21 @@ export default function WeeklySection({ comics }) {
           <Tab label="Thứ Sáu" {...a11yProps(4)} />
           <Tab label="Thứ Bảy" {...a11yProps(5)} />
           <Tab label="Chủ Nhật" {...a11yProps(6)} />
+          <Link href={`/lich-phat-hanh`} passHref>
+            <Tab
+              label="Xem thêm"
+              icon={<ArrowRightIcon />}
+              iconPosition="end"
+              {...a11yProps(7)}
+            />
+          </Link>
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
         <Grid container spacing={3}>
           {comics
             .filter((comic) => comic.comic_weekday === "MO")
+            .slice(0, 10)
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -76,6 +87,7 @@ export default function WeeklySection({ comics }) {
         <Grid container spacing={3}>
           {comics
             .filter((comic) => comic.comic_weekday === "TU")
+            .slice(0, 10)
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -87,6 +99,7 @@ export default function WeeklySection({ comics }) {
         <Grid container spacing={3}>
           {comics
             .filter((comic) => comic.comic_weekday === "WE")
+            .slice(0, 10)
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -98,6 +111,7 @@ export default function WeeklySection({ comics }) {
         <Grid container spacing={3}>
           {comics
             .filter((comic) => comic.comic_weekday === "TH")
+            .slice(0, 10)
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -109,6 +123,7 @@ export default function WeeklySection({ comics }) {
         <Grid container spacing={3}>
           {comics
             .filter((comic) => comic.comic_weekday === "FR")
+            .slice(0, 10)
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -120,6 +135,7 @@ export default function WeeklySection({ comics }) {
         <Grid container spacing={3}>
           {comics
             .filter((comic) => comic.comic_weekday === "SA")
+            .slice(0, 10)
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
@@ -131,6 +147,7 @@ export default function WeeklySection({ comics }) {
         <Grid container spacing={3}>
           {comics
             .filter((comic) => comic.comic_weekday === "SU")
+            .slice(0, 10)
             .map((comic) => (
               <Grid key={comic.id} item xs={6} sm={4} md={3} lg={2.4}>
                 <ComicSquareCard comic={comic} />
