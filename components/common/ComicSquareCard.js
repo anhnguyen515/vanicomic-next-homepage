@@ -24,6 +24,7 @@ export default function ComicSquareCard({ comic }) {
               // backgroundImage: `url(${comic.cover})`,
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
+              backgroundSize: "cover",
               height: "100%",
               display: "flex",
               flexDirection: "column",
@@ -98,7 +99,7 @@ export default function ComicSquareCard({ comic }) {
             >
               {comic.name}
             </Typography>
-            <Typography fontWeight={500}>{comic.user.username}</Typography>
+            <Typography fontWeight={500}>{comic.user.name}</Typography>
             <Divider
               sx={{ backgroundColor: "text.light", width: 25, mt: 1, mb: 1 }}
             />

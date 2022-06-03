@@ -2,23 +2,78 @@
   "users": [
     {
       "id": 1,
-      "username": "tác giả 1"
+      "username_validator": "",
+      "username": "user1",
+      "name": "Pookie Senpai",
+      "user_code": "",
+      "intro": "🌸 I enjoy cute things and heavy metal. 🌸",
+      "email": "pookie_senpai@gmail.com",
+      "email_verified": true,
+      "avatar": "https://wcommunity-phinf.pstatic.net/20220419_107/1650348689838DcNK4_JPEG/image.jpg",
+      "avatar_url": "https://wcommunity-phinf.pstatic.net/20220419_107/1650348689838DcNK4_JPEG/image.jpg",
+      "avatar_thumbnails": {},
+      "avatar_verify_code": "",
+      "updated_at": "06/03/2022"
     },
     {
       "id": 2,
-      "username": "tác giả 2"
+      "username_validator": "",
+      "username": "user2",
+      "name": "Purpah",
+      "user_code": "",
+      "intro": "Ello! I’m Purpah - an avid enjoyer of all things fantasy and helmeted. At the moment I am working on “Suitor Armor” on here but hope to make many more stories for you to enjoy in the future. I have a cat named Imhotep and a bunny named Bellatrix ❤️",
+      "email": "purpah@gmail.com",
+      "email_verified": true,
+      "avatar": "https://wcommunity-phinf.pstatic.net/20220326_26/1648269529503CxICv_JPEG/image.jpg",
+      "avatar_url": "https://wcommunity-phinf.pstatic.net/20220326_26/1648269529503CxICv_JPEG/image.jpg",
+      "avatar_thumbnails": {},
+      "avatar_verify_code": "",
+      "updated_at": "06/03/2022"
     },
     {
       "id": 3,
-      "username": "tác giả 3"
+      "username_validator": "",
+      "username": "user3",
+      "name": "stephattyy",
+      "user_code": "",
+      "intro": "hi, i’m bad at bios cuz idk much about myself, but i’m getting there ッ currently working on Reunion for WEBTOON Originals!",
+      "email": "steph@gmail.com",
+      "email_verified": true,
+      "avatar": "https://wcommunity-phinf.pstatic.net/20220404_127/1649058768766mnL92_JPEG/image.jpg",
+      "avatar_url": "https://wcommunity-phinf.pstatic.net/20220404_127/1649058768766mnL92_JPEG/image.jpg",
+      "avatar_thumbnails": {},
+      "avatar_verify_code": "",
+      "updated_at": "06/03/2022"
     },
     {
       "id": 4,
-      "username": "tác giả 4"
+      "username_validator": "",
+      "username": "user4",
+      "name": "fishball",
+      "user_code": "",
+      "intro": "🍳",
+      "email": "fishball@gmail.com",
+      "email_verified": false,
+      "avatar": "https://wcommunity-phinf.pstatic.net/20220318_177/1647611507658Py7J8_JPEG/image.jpg",
+      "avatar_url": "https://wcommunity-phinf.pstatic.net/20220318_177/1647611507658Py7J8_JPEG/image.jpg",
+      "avatar_thumbnails": {},
+      "avatar_verify_code": "",
+      "updated_at": "06/03/2022"
     },
     {
       "id": 5,
-      "username": "tác giả 5"
+      "username_validator": "",
+      "username": "user5",
+      "name": "elfboi",
+      "user_code": "",
+      "intro": "Keep on trucking.",
+      "email": "elfboi@gmail.com",
+      "email_verified": false,
+      "avatar": "https://wcommunity-phinf.pstatic.net/20220316_21/1647362391937BHVqY_JPEG/image.jpg",
+      "avatar_url": "https://wcommunity-phinf.pstatic.net/20220316_21/1647362391937BHVqY_JPEG/image.jpg",
+      "avatar_thumbnails": {},
+      "avatar_verify_code": "",
+      "updated_at": "06/03/2022"
     }
   ],
   "genres": [
@@ -570,6 +625,148 @@
       "rate_point": 9.71,
       "updated_at": "06/01/2022",
       "created_at": "06/01/2022"
+    },
+    {
+      "id": 24,
+      "name": "High Class Homos",
+      "slug": "high-class-homos",
+      "userId": 5,
+      "genreId": 3,
+      "status": "C",
+      "summary": "Princess Sapphia of Mytilene is not into princes. So, when her parents start putting the heat on her to get hitched, she enlists the help of her equally gay best friend, Prince August of Phthia. But will these two royals be able to pull off a convincing sham marriage? More importantly, will Sapphia ever land a date with the castle maids? Follow these high class homos as they navigate life, love, and (occasionally) their actual jobs.",
+      "comic_status": "C",
+      "comic_weekday": "SU",
+      "picture": "https://i.vnvl.net/vo/20200810/Y7R1gK.jpg.240x360_q85_crop.jpg",
+      "picture_url": "",
+      "cover": "https://i.vnvl.net/vo/20200810/Y7R1gK.jpg.240x360_q85_crop.jpg",
+      "followers": 826522,
+      "views": 52700000,
+      "likes": 4600000,
+      "rate": null,
+      "rate_point": 9.34,
+      "updated_at": "06/01/2022",
+      "created_at": "06/01/2022"
+    },
+    {
+      "id": 25,
+      "name": "Acception",
+      "slug": "acception",
+      "userId": 4,
+      "genreId": 1,
+      "status": "C",
+      "summary": "Princess Sapphia of Mytilene is not into princes. So, when her parents start putting the heat on her to get hitched, she enlists the help of her equally gay best friend, Prince August of Phthia. But will these two royals be able to pull off a convincing sham marriage? More importantly, will Sapphia ever land a date with the castle maids? Follow these high class homos as they navigate life, love, and (occasionally) their actual jobs.",
+      "comic_status": "C",
+      "comic_weekday": "SU",
+      "picture": "https://i.vnvl.net/vo/20200810/Y7R1gK.jpg.240x360_q85_crop.jpg",
+      "picture_url": "",
+      "cover": "https://i.vnvl.net/vo/20200810/Y7R1gK.jpg.240x360_q85_crop.jpg",
+      "followers": 836158,
+      "views": 141500000,
+      "likes": 12500000,
+      "rate": null,
+      "rate_point": 9.02,
+      "updated_at": "06/01/2022",
+      "created_at": "06/01/2022"
+    },
+    {
+      "id": 26,
+      "name": "Boyfriend of the Dead",
+      "slug": "boyfriend-of-the-dead",
+      "userId": 4,
+      "genreId": 3,
+      "status": "C",
+      "summary": "She’s a smart, independent young woman who’s kicking ass and struggling to make her way through the middle of the zombie apocalypse. Just her luck: one day she goes out searching for food and shelter and ends up finding a boyfriend instead. And, oh yeah, because modern love isn’t hard enough…he’s UNDEAD!",
+      "comic_status": "C",
+      "comic_weekday": "TU",
+      "picture": "https://i.vnvl.net/vo/20200810/Y7R1gK.jpg.240x360_q85_crop.jpg",
+      "picture_url": "",
+      "cover": "https://i.vnvl.net/vo/20200810/Y7R1gK.jpg.240x360_q85_crop.jpg",
+      "followers": 2000000,
+      "views": 410900000,
+      "likes": 28500000,
+      "rate": null,
+      "rate_point": 9.74,
+      "updated_at": "06/01/2022",
+      "created_at": "06/01/2022"
+    }
+  ],
+  "chapters": [
+    {
+      "id": 1,
+      "comicId": 19,
+      "chap_num": 1,
+      "content": [],
+      "sound": null,
+      "likes": 12345,
+      "created_at": "06/01/2022",
+      "updated_at": "06/03/2022",
+      "removed": false
+    },
+    {
+      "id": 2,
+      "comicId": 19,
+      "chap_num": 2,
+      "content": [],
+      "sound": null,
+      "likes": 54321,
+      "created_at": "06/01/2022",
+      "updated_at": "06/03/2022",
+      "removed": false
+    },
+    {
+      "id": 3,
+      "comicId": 19,
+      "chap_num": 3,
+      "content": [],
+      "sound": null,
+      "likes": 21241,
+      "created_at": "06/01/2022",
+      "updated_at": "06/03/2022",
+      "removed": false
+    },
+    {
+      "id": 4,
+      "comicId": 19,
+      "chap_num": 4,
+      "content": [],
+      "sound": null,
+      "likes": 98651,
+      "created_at": "06/01/2022",
+      "updated_at": "06/03/2022",
+      "removed": false
+    },
+    {
+      "id": 5,
+      "comicId": 19,
+      "chap_num": 5,
+      "content": [],
+      "sound": null,
+      "likes": 109238,
+      "created_at": "06/01/2022",
+      "updated_at": "06/03/2022",
+      "removed": false
+    },
+    {
+      "id": 6,
+      "comicId": 1,
+      "chap_num": 1,
+      "content": [],
+      "sound": null,
+      "likes": 12345,
+      "created_at": "06/01/2022",
+      "updated_at": "06/03/2022",
+      "removed": false
+    },
+    {
+      "id": 7,
+      "comicId": 1,
+      "chap_num": 2,
+      "content": [],
+      "sound": null,
+      "likes": 12345,
+      "created_at": "06/01/2022",
+      "updated_at": "06/03/2022",
+      "removed": false
     }
   ]
 }
