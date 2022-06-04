@@ -44,7 +44,7 @@ export default function ComicSquareCard({ comic }) {
               color="primary"
               fontSize="1.1rem"
               fontWeight={500}
-              sx={{ display: "flex", alignItems: "center", gap: 1 }}
+              sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
             >
               <VisibilityIcon fontSize="small" /> {numberFormat(comic.views)}
             </Typography>
@@ -52,7 +52,7 @@ export default function ComicSquareCard({ comic }) {
               color="primary"
               fontSize="1.1rem"
               fontWeight={500}
-              sx={{ display: "flex", alignItems: "center", gap: 1 }}
+              sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
             >
               <FavoriteIcon fontSize="small" /> {numberFormat(comic.likes)}
             </Typography>
@@ -79,11 +79,14 @@ export default function ComicSquareCard({ comic }) {
               bottom: 0,
               height: "100%",
               opacity: 0,
-              overflow: "hidden",
+              // overflow: "hidden",
               transition: "opacity 0.2s",
               "&:hover": {
                 opacity: 1,
               },
+
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <Typography
@@ -103,7 +106,41 @@ export default function ComicSquareCard({ comic }) {
             <Divider
               sx={{ backgroundColor: "text.light", width: 25, mt: 1, mb: 1 }}
             />
-            <Typography>{comic.summary}</Typography>
+            <Typography
+              sx={{
+                display: "-webkit-box",
+                WebkitBoxOrient: "vertical",
+                WebkitLineClamp: {
+                  xs: 3,
+                  lg: 4,
+                },
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+              }}
+            >
+              {comic.summary}
+            </Typography>
+            <Divider
+              sx={{
+                alignSelf: "flex-end",
+                backgroundColor: "text.light",
+                width: 25,
+                mt: 1,
+                mb: 1,
+              }}
+            />
+            <Chip
+              label={comic.genre.name}
+              // variant="outlined"
+              size="small"
+              sx={{
+                alignSelf: "flex-start",
+                mt: "auto",
+                backgroundColor: "text.light",
+                border: "none",
+                color: comic.genre.main_color,
+              }}
+            />
           </Paper>
         </Paper>
       </Link>

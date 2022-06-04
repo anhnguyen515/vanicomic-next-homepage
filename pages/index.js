@@ -85,8 +85,8 @@ export default function Home({ comics, genres }) {
           </Box>
         </Box>
         {/* xuất bản truyện */}
-        <Divider />
         <Box mb={3} sx={{ padding: 3 }}>
+          <Divider sx={{ mb: 3 }} />
           <Grid container spacing={3}>
             <Grid item xs={12} md={4}>
               <Box
@@ -116,7 +116,7 @@ export default function Home({ comics, genres }) {
             </Grid>
             <Grid container item xs={12} md={8} spacing={2}>
               {comics.slice(0, 8).map((comic) => (
-                <Grid item key={comic.id} xs={3}>
+                <Grid item key={comic.id} xs={6} sm={4} lg={3}>
                   <ComicSquareCard comic={comic} />
                 </Grid>
               ))}
