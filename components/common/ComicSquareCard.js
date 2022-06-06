@@ -1,13 +1,8 @@
-import FavoriteIcon from "@mui/icons-material/Favorite";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Chip, Divider, Paper, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 import { getWeekday, numberFormat } from "utility/utils";
-import TodayIcon from "@mui/icons-material/Today";
-import PauseIcon from "@mui/icons-material/Pause";
-import NewReleasesIcon from "@mui/icons-material/NewReleases";
-import CheckIcon from "@mui/icons-material/Check";
 import ComicStatus from "./ComicStatus";
 
 export default function ComicSquareCard({ comic }) {

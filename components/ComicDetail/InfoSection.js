@@ -17,7 +17,7 @@ export default function InfoSection({ comic }) {
             md: 3,
           },
           "&>*": {
-            mb: 2,
+            mb: 3,
           },
         }}
       >
@@ -43,18 +43,20 @@ export default function InfoSection({ comic }) {
             <GradeIcon color="primary" /> {numberFormat(comic.rate_point)}
           </Typography>
         </Box>
-        {/* tình trạng */}
-        <Box>
-          <Typography fontWeight={300} fontSize="1.1rem">
-            Tình trạng truyện: {getComicStatus(comic.comic_status)}
-          </Typography>
-        </Box>
         {/* ngày ra chương mới mỗi tuần */}
-        <Box>
-          <Typography fontWeight={500} fontSize="1.5rem" lineHeight="1.5rem">
-            {getWeekday(comic.comic_weekday).text} hàng tuần
-          </Typography>
-        </Box>
+        {comic.comic_status !== "F" ? (
+          <Box>
+            <Typography fontWeight={500} fontSize="1.5rem" lineHeight="1.5rem">
+              {getWeekday(comic.comic_weekday).text} hàng tuần
+            </Typography>
+          </Box>
+        ) : (
+          <Box>
+            <Typography fontWeight={500} fontSize="1.5rem" lineHeight="1.5rem">
+              {getComicStatus(comic.comic_status)}
+            </Typography>
+          </Box>
+        )}
         {/* tóm tắt truyện */}
         <Box>
           <Typography fontWeight={400}>{comic.summary}</Typography>

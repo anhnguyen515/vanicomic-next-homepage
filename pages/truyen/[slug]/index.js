@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Pagination } from "@mui/material";
+import { Box, Container, Grid, Pagination, Typography } from "@mui/material";
 import AlsoRead from "components/ComicDetail/AlsoRead";
 import ChaptersList from "components/ComicDetail/ChaptersList";
 import Header from "components/ComicDetail/Header";
@@ -61,6 +61,11 @@ export default function ComicDetail({
       {/* body */}
       <Container maxWidth="2xl">
         <Box sx={{ p: 3 }}>
+          {comic.comic_status === "D" && (
+            <Typography variant="h6" textAlign="center">
+              {comic.name} hiện đang tạm ngưng. Bộ truyện sẽ sớm quay trở lại!
+            </Typography>
+          )}
           <Grid container>
             <Grid item xs={12} md={8} order={{ xs: 2, md: 1 }}>
               <ChaptersList chapters={chapters} />
