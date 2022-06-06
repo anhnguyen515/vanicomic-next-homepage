@@ -11,7 +11,11 @@ export default function ComicRectangleCard({ comic }) {
   return (
     <>
       <Link href={`/truyen/${comic.id}`} passHref>
-        <Card sx={{ display: "flex", gap: 2, cursor: "pointer" }}>
+        <Card
+          elevation={0}
+          variant="outlined"
+          sx={{ display: "flex", gap: 2, cursor: "pointer" }}
+        >
           <CardMedia
             component="img"
             sx={{ aspectRatio: "1", width: "8rem" }}

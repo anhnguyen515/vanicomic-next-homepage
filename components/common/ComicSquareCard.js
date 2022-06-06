@@ -11,6 +11,7 @@ export default function ComicSquareCard({ comic }) {
     <>
       <Link href={`/truyen/${comic.id}`} passHref>
         <Paper
+          elevation={0}
           sx={{
             cursor: "pointer",
             aspectRatio: "1",

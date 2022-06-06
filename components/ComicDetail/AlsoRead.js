@@ -5,7 +5,7 @@ import ComicRectangleCard from "components/common/ComicRectangleCard";
 export default function AlsoRead({ comics }) {
   return (
     <>
-      <Box mt={3}>
+      <Box mt={3} mb={3}>
         <Typography variant="h5" gutterBottom>
           Có thể bạn cũng thích
         </Typography>

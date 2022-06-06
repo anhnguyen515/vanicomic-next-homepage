@@ -14,6 +14,20 @@ import {
 import { createTheme } from "@mui/material/styles";
 
 export const lightTheme = createTheme({
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+      },
+      styleOverrides: {
+        root: {
+          borderRadius: "3rem",
+          padding: "0.5rem 1rem",
+        },
+      },
+    },
+  },
+
   palette: {
     mode: "light",
     primary: {
