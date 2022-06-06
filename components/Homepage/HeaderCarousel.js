@@ -15,7 +15,7 @@ function PrevArrow(props) {
       sx={{
         position: "absolute",
         top: "45%",
-        left: "10rem",
+        left: "10%",
         zIndex: 100,
         color: "text.light",
         "&:hover": {
@@ -38,7 +38,7 @@ function NextArrow(props) {
       sx={{
         position: "absolute",
         top: "45%",
-        right: "10rem",
+        right: "10%",
         zIndex: 100,
         color: "text.light",
         "&:hover": {
@@ -84,7 +84,7 @@ export default function HeaderCarousel({ comics }) {
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
-                filter: "blur(0.5rem)",
+                filter: "blur(0.75rem)",
               }}
             ></Box>
             <Box

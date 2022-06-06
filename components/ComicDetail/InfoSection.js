@@ -5,7 +5,7 @@ import GroupIcon from "@mui/icons-material/Group";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import GradeIcon from "@mui/icons-material/Grade";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import { getWeekday, numberFormat } from "utility/utils";
+import { getComicStatus, getWeekday, numberFormat } from "utility/utils";
 
 export default function InfoSection({ comic }) {
   return (
@@ -43,10 +43,16 @@ export default function InfoSection({ comic }) {
             <GradeIcon color="primary" /> {numberFormat(comic.rate_point)}
           </Typography>
         </Box>
+        {/* tình trạng */}
+        <Box>
+          <Typography fontWeight={300} fontSize="1.1rem">
+            Tình trạng truyện: {getComicStatus(comic.comic_status)}
+          </Typography>
+        </Box>
         {/* ngày ra chương mới mỗi tuần */}
         <Box>
           <Typography fontWeight={500} fontSize="1.5rem" lineHeight="1.5rem">
-            {getWeekday(comic.comic_weekday)} hàng tuần
+            {getWeekday(comic.comic_weekday).text} hàng tuần
           </Typography>
         </Box>
         {/* tóm tắt truyện */}

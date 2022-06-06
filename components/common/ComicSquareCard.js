@@ -3,9 +3,15 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Chip, Divider, Paper, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
-import { numberFormat } from "utility/utils";
+import { getWeekday, numberFormat } from "utility/utils";
+import TodayIcon from "@mui/icons-material/Today";
+import PauseIcon from "@mui/icons-material/Pause";
+import NewReleasesIcon from "@mui/icons-material/NewReleases";
+import CheckIcon from "@mui/icons-material/Check";
+import ComicStatus from "./ComicStatus";
 
 export default function ComicSquareCard({ comic }) {
+  const today = new Date().getDay();
   return (
     <>
       <Link href={`/truyen/${comic.id}`} passHref>
@@ -44,17 +50,28 @@ export default function ComicSquareCard({ comic }) {
               fontSize="1.1rem"
               fontWeight={500}
               sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
+              gutterBottom
             >
               <VisibilityIcon fontSize="small" /> {numberFormat(comic.views)}
             </Typography>
-            <Typography
+            {/* <Typography
               color="primary"
               fontSize="1.1rem"
               fontWeight={500}
               sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
             >
               <FavoriteIcon fontSize="small" /> {numberFormat(comic.likes)}
-            </Typography>
+            </Typography> */}
+            {comic.comic_status === "C" &&
+              getWeekday(comic.comic_weekday).index === today && (
+                <ComicStatus>{comic.comic_status}</ComicStatus>
+              )}
+            {comic.comic_status === "F" && (
+              <ComicStatus>{comic.comic_status}</ComicStatus>
+            )}
+            {comic.comic_status === "D" && (
+              <ComicStatus>{comic.comic_status}</ComicStatus>
+            )}
             <Chip
               label={comic.genre.name}
               size="small"

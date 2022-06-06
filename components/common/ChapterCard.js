@@ -13,6 +13,10 @@ export default function ChapterCard({ chapter }) {
           gap: 3,
           borderBottom: 1,
           borderColor: "text.light",
+          "&:first-of-type": {
+            borderTop: 1,
+            borderColor: "text.light",
+          },
         }}
       >
         <Avatar variant="square" sx={{ width: "5rem", height: "5rem" }} />

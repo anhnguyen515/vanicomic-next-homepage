@@ -1,7 +1,12 @@
+import { green, red } from "@mui/material/colors";
 import dayjs from "dayjs";
 import "dayjs/locale/vi";
 import relativeTime from "dayjs/plugin/relativeTime";
 import updateLocale from "dayjs/plugin/updateLocale";
+import TodayIcon from "@mui/icons-material/Today";
+import PauseIcon from "@mui/icons-material/Pause";
+import NewReleasesIcon from "@mui/icons-material/NewReleases";
+import CheckIcon from "@mui/icons-material/Check";
 
 // ----- VN date config -----
 dayjs.extend(updateLocale);
@@ -68,21 +73,54 @@ export function numberFormat(numbers) {
   }
 }
 
+export function comicStatusColor(status) {
+  switch (status) {
+    case "C":
+      return red[500];
+    case "F":
+      return green["A700"];
+    case "D":
+      return "#222731";
+  }
+}
+
+export function comicStatusIcon(status) {
+  switch (status) {
+    case "C":
+      return <TodayIcon fontSize="small" />;
+    case "F":
+      return <CheckIcon fontSize="small" />;
+    case "D":
+      return <PauseIcon fontSize="small" />;
+  }
+}
+
 export function getWeekday(weekday) {
   switch (weekday) {
     case "MO":
-      return "Thứ Hai";
+      return { text: "Thứ Hai", index: 1 };
     case "TU":
-      return "Thứ Ba";
+      return { text: "Thứ Ba", index: 2 };
     case "WE":
-      return "Thứ Tư";
+      return { text: "Thứ Tư", index: 3 };
     case "TH":
-      return "Thứ Năm";
+      return { text: "Thứ Năm", index: 4 };
     case "FR":
-      return "Thứ Sáu";
+      return { text: "Thứ Sáu", index: 5 };
     case "SA":
-      return "Thứ Bảy";
+      return { text: "Thứ Bảy", index: 6 };
     case "SU":
-      return "Chủ Nhật";
+      return { text: "Chủ Nhật", index: 7 };
+  }
+}
+
+export function getComicStatus(status) {
+  switch (status) {
+    case "C":
+      return "Còn tiếp";
+    case "F":
+      return "Hoàn thành";
+    case "D":
+      return "Tạm ngưng";
   }
 }
