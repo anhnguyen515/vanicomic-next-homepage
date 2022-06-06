@@ -1,18 +1,68 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+
+function PrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <IconButton
+      // className="slick-arrow"
+      onClick={onClick}
+      size="small"
+      sx={{
+        position: "absolute",
+        top: "45%",
+        left: "10rem",
+        zIndex: 100,
+        color: "text.light",
+        "&:hover": {
+          color: "primary.main",
+        },
+      }}
+    >
+      <ArrowBackIosNewIcon />
+    </IconButton>
+  );
+}
+
+function NextArrow(props) {
+  const { onClick } = props;
+  return (
+    <IconButton
+      // className="slick-arrow"
+      onClick={onClick}
+      size="small"
+      sx={{
+        position: "absolute",
+        top: "45%",
+        right: "10rem",
+        zIndex: 100,
+        color: "text.light",
+        "&:hover": {
+          color: "primary.main",
+        },
+      }}
+    >
+      <ArrowForwardIosIcon />
+    </IconButton>
+  );
+}
 
 export default function HeaderCarousel({ comics }) {
   const settings = {
-    dots: true,
-    arrows: false,
+    // dots: true,
+    // arrows: false,
     infinite: true,
     speed: 1000,
     autoplay: true,
     autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
   };
 
   return (

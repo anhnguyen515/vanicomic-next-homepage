@@ -50,6 +50,10 @@ export function timesFromNow(dateString) {
   return dayjs(date).fromNow();
 }
 
+export function dateFormat(date) {
+  return dayjs(date).format("DD/MM/YYYY");
+}
+
 export function numberFormat(numbers) {
   // const THOUSAND = 1000;
   const MILLION = 1000000;
@@ -61,5 +65,24 @@ export function numberFormat(numbers) {
     return parseFloat(numbers / BILLION).toFixed(1) + "B";
   } else {
     return numbers.toLocaleString("en-US");
+  }
+}
+
+export function getWeekday(weekday) {
+  switch (weekday) {
+    case "MO":
+      return "Thứ Hai";
+    case "TU":
+      return "Thứ Ba";
+    case "WE":
+      return "Thứ Tư";
+    case "TH":
+      return "Thứ Năm";
+    case "FR":
+      return "Thứ Sáu";
+    case "SA":
+      return "Thứ Bảy";
+    case "SU":
+      return "Chủ Nhật";
   }
 }

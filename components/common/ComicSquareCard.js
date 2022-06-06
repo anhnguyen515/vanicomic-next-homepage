@@ -1,10 +1,9 @@
-import { Box, Chip, Divider, Paper, Typography } from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import { Chip, Divider, Paper, Typography } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 import { numberFormat } from "utility/utils";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import GroupIcon from "@mui/icons-material/Group";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import Link from "next/link";
 
 export default function ComicSquareCard({ comic }) {
   return (
@@ -79,14 +78,10 @@ export default function ComicSquareCard({ comic }) {
               bottom: 0,
               height: "100%",
               opacity: 0,
-              // overflow: "hidden",
               transition: "opacity 0.2s",
               "&:hover": {
                 opacity: 1,
               },
-
-              display: "flex",
-              flexDirection: "column",
             }}
           >
             <Typography
@@ -112,17 +107,17 @@ export default function ComicSquareCard({ comic }) {
                 WebkitBoxOrient: "vertical",
                 WebkitLineClamp: {
                   xs: 3,
-                  lg: 4,
+                  xl: 4,
                 },
                 overflow: "hidden",
                 textOverflow: "ellipsis",
+                overflow: "hidden",
               }}
             >
               {comic.summary}
             </Typography>
             <Divider
               sx={{
-                alignSelf: "flex-end",
                 backgroundColor: "text.light",
                 width: 25,
                 mt: 1,
@@ -134,7 +129,9 @@ export default function ComicSquareCard({ comic }) {
               // variant="outlined"
               size="small"
               sx={{
-                alignSelf: "flex-start",
+                position: "absolute",
+                bottom: 8,
+                left: 8,
                 mt: "auto",
                 backgroundColor: "text.light",
                 border: "none",

@@ -72,7 +72,7 @@ export default function GenresSection({ comics, genres }) {
       </Box>
       <TabPanel value={value} index={0}>
         <Typography
-          variant="h5"
+          variant="h4"
           fontWeight={500}
           textAlign="center"
           color={genres[value].main_color}
@@ -93,7 +93,7 @@ export default function GenresSection({ comics, genres }) {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Typography
-          variant="h5"
+          variant="h4"
           fontWeight={500}
           textAlign="center"
           color={genres[value].main_color}
@@ -114,7 +114,7 @@ export default function GenresSection({ comics, genres }) {
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Typography
-          variant="h5"
+          variant="h4"
           fontWeight={500}
           textAlign="center"
           color={genres[value].main_color}
@@ -135,7 +135,7 @@ export default function GenresSection({ comics, genres }) {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <Typography
-          variant="h5"
+          variant="h4"
           fontWeight={500}
           textAlign="center"
           color={genres[value].main_color}
@@ -156,7 +156,7 @@ export default function GenresSection({ comics, genres }) {
       </TabPanel>
       <TabPanel value={value} index={4}>
         <Typography
-          variant="h5"
+          variant="h4"
           fontWeight={500}
           textAlign="center"
           color={genres[value].main_color}
@@ -176,7 +176,7 @@ export default function GenresSection({ comics, genres }) {
       </TabPanel>
       <TabPanel value={value} index={5}>
         <Typography
-          variant="h5"
+          variant="h4"
           fontWeight={500}
           textAlign="center"
           color={genres[value].main_color}

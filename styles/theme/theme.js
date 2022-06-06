@@ -58,7 +58,7 @@ export const lightTheme = createTheme({
     },
 
     text: {
-      light: grey[50],
+      light: grey[200],
       main: grey[500],
       dark: grey[600],
     },

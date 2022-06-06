@@ -1,12 +1,11 @@
+import VisibilityIcon from "@mui/icons-material/Visibility";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import * as React from "react";
 import { numberFormat } from "utility/utils";
-import VisibilityIcon from "@mui/icons-material/Visibility";
 
 export default function ComicRectangleCard({ comic }) {
   return (
@@ -15,7 +14,7 @@ export default function ComicRectangleCard({ comic }) {
         <Card sx={{ display: "flex", gap: 2, cursor: "pointer" }}>
           <CardMedia
             component="img"
-            sx={{ aspectRatio: "1", width: "10rem" }}
+            sx={{ aspectRatio: "1", width: "8rem" }}
             image={comic.picture}
             alt={`ảnh bìa của ${comic.name}`}
           />

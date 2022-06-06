@@ -38,7 +38,7 @@ function NextArrow(props) {
       size="small"
       sx={{
         position: "absolute",
-        top: "45%",
+        top: "40%",
         right: "-2rem",
         zIndex: 100,
         "&:hover": {
