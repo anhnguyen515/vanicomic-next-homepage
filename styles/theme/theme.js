@@ -72,7 +72,7 @@ export const lightTheme = createTheme({
     },
 
     text: {
-      light: grey[200],
+      light: grey[100],
       main: grey[500],
       dark: grey[600],
     },

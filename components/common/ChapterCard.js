@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function ChapterCard({ chapter }) {
   return (
-    <Link href={`/comic/${chapter.comic.id}/chapter/${chapter.slug}`} passHref>
+    <Link href={`/comic/${chapter.comic.id}/chapter/${chapter.id}`} passHref>
       <Box
         sx={{
           display: "flex",
@@ -17,6 +17,10 @@ export default function ChapterCard({ chapter }) {
           "&:first-of-type": {
             borderTop: 1,
             borderColor: "text.light",
+          },
+          cursor: "pointer",
+          "&:hover": {
+            backgroundColor: "text.light",
           },
         }}
       >

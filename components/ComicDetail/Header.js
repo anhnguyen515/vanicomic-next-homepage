@@ -88,7 +88,7 @@ export default function Header({ comic }) {
                     },
                   }}
                 >
-                  <FontAwesomeIcon icon={faTwitter} width={16} />
+                  <FontAwesomeIcon icon={faTwitter} width={16} height={16} />
                 </IconButton>
               </Box>
               <Box>
@@ -101,7 +101,11 @@ export default function Header({ comic }) {
                     },
                   }}
                 >
-                  <FontAwesomeIcon icon={faRedditAlien} width={16} />
+                  <FontAwesomeIcon
+                    icon={faRedditAlien}
+                    width={16}
+                    height={16}
+                  />
                 </IconButton>
               </Box>
               <Chip label="Đánh giá" icon={<AddIcon />} color="primary" />

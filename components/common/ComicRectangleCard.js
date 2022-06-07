@@ -14,7 +14,12 @@ export default function ComicRectangleCard({ comic }) {
         <Card
           elevation={0}
           variant="outlined"
-          sx={{ display: "flex", gap: 2, cursor: "pointer" }}
+          sx={{
+            display: "flex",
+            gap: 2,
+            cursor: "pointer",
+            "&:hover": { backgroundColor: "text.light" },
+          }}
         >
           <CardMedia
             component="img"
