@@ -2,10 +2,11 @@ import { Avatar, Box, Typography } from "@mui/material";
 import React from "react";
 import { dateFormat, numberFormat } from "utility/utils";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import Link from "next/link";
 
 export default function ChapterCard({ chapter }) {
   return (
-    <>
+    <Link href={`/comic/${chapter.comic.id}/chapter/${chapter.slug}`} passHref>
       <Box
         sx={{
           display: "flex",
@@ -29,6 +30,6 @@ export default function ChapterCard({ chapter }) {
           {dateFormat(chapter.created_at)}
         </Typography>
       </Box>
-    </>
+    </Link>
   );
 }

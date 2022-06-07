@@ -65,39 +65,45 @@ export default function Header({ comic }) {
                 gap: 1,
               }}
             >
-              <IconButton
-                sx={{
-                  color: "text.light",
-                  backgroundColor: "sub.main",
-                  "&:hover": {
-                    backgroundColor: "#3C8FFF",
-                  },
-                }}
-              >
-                <FontAwesomeIcon icon={faFacebookF} width={16} height={16} />
-              </IconButton>
-              <IconButton
-                sx={{
-                  color: "text.light",
-                  backgroundColor: "sub.main",
-                  "&:hover": {
-                    backgroundColor: "#1A8CD8",
-                  },
-                }}
-              >
-                <FontAwesomeIcon icon={faTwitter} width={16} />
-              </IconButton>
-              <IconButton
-                sx={{
-                  color: "text.light",
-                  backgroundColor: "sub.main",
-                  "&:hover": {
-                    backgroundColor: "#FF4501",
-                  },
-                }}
-              >
-                <FontAwesomeIcon icon={faRedditAlien} width={16} />
-              </IconButton>
+              <Box>
+                <IconButton
+                  sx={{
+                    color: "text.light",
+                    backgroundColor: "sub.main",
+                    "&:hover": {
+                      backgroundColor: "#3C8FFF",
+                    },
+                  }}
+                >
+                  <FontAwesomeIcon icon={faFacebookF} width={16} height={16} />
+                </IconButton>
+              </Box>
+              <Box>
+                <IconButton
+                  sx={{
+                    color: "text.light",
+                    backgroundColor: "sub.main",
+                    "&:hover": {
+                      backgroundColor: "#1A8CD8",
+                    },
+                  }}
+                >
+                  <FontAwesomeIcon icon={faTwitter} width={16} />
+                </IconButton>
+              </Box>
+              <Box>
+                <IconButton
+                  sx={{
+                    color: "text.light",
+                    backgroundColor: "sub.main",
+                    "&:hover": {
+                      backgroundColor: "#FF4501",
+                    },
+                  }}
+                >
+                  <FontAwesomeIcon icon={faRedditAlien} width={16} />
+                </IconButton>
+              </Box>
               <Chip label="Đánh giá" icon={<AddIcon />} color="primary" />
             </Box>
             <Button

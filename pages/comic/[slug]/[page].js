@@ -48,7 +48,7 @@ export default function ComicDetail({
   const [currPage, setCurrPage] = React.useState(+page);
   const handleChange = (event, value) => {
     setCurrPage(value);
-    router.push(`/truyen/${slug}/${value}`);
+    router.push(`/comic/${slug}/${value}`);
   };
   return (
     <>

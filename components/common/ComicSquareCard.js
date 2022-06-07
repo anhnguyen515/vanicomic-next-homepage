@@ -9,7 +9,7 @@ export default function ComicSquareCard({ comic }) {
   const today = new Date().getDay();
   return (
     <>
-      <Link href={`/truyen/${comic.id}`} passHref>
+      <Link href={`/comic/${comic.id}/1`} passHref>
         <Paper
           elevation={0}
           sx={{
