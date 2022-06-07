@@ -18,13 +18,12 @@ import SubCategoryTitle from "components/common/SubCategoryTitle";
 import GenresSection from "components/Homepage/GenresSection";
 import HotComicsSection from "components/Homepage/HotComicsSection";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { getAllComics, getAllGenres } from "utility/apis";
 
 export async function getServerSideProps() {
-  const comics = await axiosClient
-    .get(`comics?_expand=user&_expand=genre`)
-    .then((res) => res.data);
+  const comics = await getAllComics();
 
-  const genres = await axiosClient.get(`genres`).then((res) => res.data);
+  const genres = await getAllGenres();
 
   return {
     props: {

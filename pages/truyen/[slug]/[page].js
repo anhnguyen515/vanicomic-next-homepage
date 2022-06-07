@@ -6,24 +6,19 @@ import InfoSection from "components/ComicDetail/InfoSection";
 import HeadPage from "components/common/HeadPage";
 import { useRouter } from "next/router";
 import React from "react";
+import { getComicChapters, getComicDetail } from "utility/apis";
 import axiosClient from "utility/axiosConfig";
 import { BRAND_NAME } from "utility/constants";
 
 export async function getServerSideProps(context) {
   const { slug, page } = context.params;
-  const comic = await axiosClient
-    .get(`comics/${slug}?_expand=user&_expand=genre`)
-    .then((res) => res.data);
+  const comic = await getComicDetail(slug);
 
   const alsoRead = await axiosClient
     .get(`comics?_expand=user&_expand=genre`)
     .then((res) => res.data);
 
-  const chapters = await axiosClient
-    .get(
-      `chapters?_expand=comic&comicId=${slug}&_page=${page}&_sort=chap_num&_order=desc`
-    )
-    .then((res) => res.data);
+  const chapters = await getComicChapters(slug, page);
 
   const totalChapters = await axiosClient
     .get(`chapters?_expand=comic&comicId=${slug}`)
