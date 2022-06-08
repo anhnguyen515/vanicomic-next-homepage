@@ -10,10 +10,10 @@ export default function CommentSection({ comic, chapter }) {
   useEffect(() => {
     async function getComments() {
       const data = await getChapterComments(chapter.id);
-      setComments(data);
+      setComments(data.filter((comment) => comment.parent === null));
     }
     getComments();
-  }, []);
+  }, [chapter.id]);
 
   return (
     <>

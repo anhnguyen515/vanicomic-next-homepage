@@ -30,10 +30,12 @@ export default function ChapterDetail({ comic, chapter }) {
           <Box mb={3}>
             <InfoSection comic={comic} chapter={chapter} />
           </Box>
-          {/* phần bình luận */}
-          <Box mb={3}>
-            <CommentSection comic={comic} chapter={chapter} />
-          </Box>
+        </Box>
+      </Container>
+      {/* phần bình luận */}
+      <Container maxWidth="xl">
+        <Box sx={{ p: 3 }}>
+          <CommentSection comic={comic} chapter={chapter} />
         </Box>
       </Container>
     </>
