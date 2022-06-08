@@ -121,7 +121,10 @@ export default function ChapterNavbar({ chapter }) {
       <Box
         sx={{
           position: "sticky",
-          top: 150,
+          top: {
+            xs: 180,
+            sm: 150,
+          },
           display: "flex",
           justifyContent: "flex-end",
           alignItems: "center",
