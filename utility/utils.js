@@ -80,7 +80,7 @@ export function comicStatusColor(status) {
     case "F":
       return green["A700"];
     case "D":
-      return "#222731";
+      return "#607d8b";
   }
 }
 

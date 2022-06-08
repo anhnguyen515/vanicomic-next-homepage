@@ -22,7 +22,6 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: "3rem",
-          padding: "0.5rem 1rem",
         },
       },
     },

@@ -36,7 +36,7 @@ export function getChapterDetail(slug) {
     .then((res) => res.data);
 }
 
-export function getChapterComments(slug) {
+export function getChapterComments(slug, page = 1) {
   return axiosClient
     .get(`comments?chapterId=${slug}&_expand=user`)
     .then((res) => res.data);

@@ -1,16 +1,19 @@
-import { Avatar, Box, Divider, Typography } from "@mui/material";
+import { Avatar, Box, Typography, Button } from "@mui/material";
 import SubCategoryTitle from "components/common/SubCategoryTitle";
 import React, { useEffect, useState } from "react";
 import { getChapterComments } from "utility/apis";
 import CommentDisplay from "./CommentDisplay";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 export default function CommentSection({ comic, chapter }) {
   const [comments, setComments] = useState([]);
+  const [commentsCount, setCommentsCount] = useState(0);
 
   useEffect(() => {
     async function getComments() {
       const data = await getChapterComments(chapter.id);
       setComments(data.filter((comment) => comment.parent === null));
+      setCommentsCount(data.length);
     }
     getComments();
   }, [chapter.id]);
@@ -29,13 +32,29 @@ export default function CommentSection({ comic, chapter }) {
       </Box>
 
       <Box mb={3}>
-        <SubCategoryTitle>Bình luận</SubCategoryTitle>
-        <Box mb={3}>người dùng viết bình luận ở đây</Box>
-        <Box>
-          {comments.map((comment) => (
-            <CommentDisplay key={comment.id} comment={comment} />
-          ))}
+        <SubCategoryTitle>Bình luận ({commentsCount})</SubCategoryTitle>
+        <Box mt={1}>
+          {comments.length !== 0 ? (
+            comments
+              .slice(0, 10)
+              .map((comment) => (
+                <CommentDisplay key={comment.id} comment={comment} />
+              ))
+          ) : (
+            <Typography fontStyle="italic">
+              Chưa có bình luận nào cho chương truyện này
+            </Typography>
+          )}
         </Box>
+      </Box>
+      <Box mb={3} sx={{ display: "flex", justifyContent: "flex-end" }}>
+        <Button
+          variant="outlined"
+          color="secondary"
+          endIcon={<ArrowForwardIcon />}
+        >
+          Đến trang bình luận
+        </Button>
       </Box>
     </>
   );

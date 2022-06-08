@@ -9,7 +9,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function CommentDisplay({ reply }) {
   return (
-    <Box sx={{ display: "flex", p: 1 }}>
+    <Box
+      sx={{ display: "flex", p: 1, borderBottom: 1, borderColor: "text.light" }}
+    >
       <Box>
         <FontAwesomeIcon
           icon={faArrowTurnUp}
@@ -23,8 +25,6 @@ export default function CommentDisplay({ reply }) {
       </Box>
       <Box
         sx={{
-          borderBottom: 1,
-          borderColor: "text.light",
           width: "100%",
         }}
       >
