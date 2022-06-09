@@ -7,7 +7,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     const event = window.addEventListener("scroll", () => {
-      if (window.pageYOffset > 500) {
+      if (window.pageYOffset > 300) {
         setShowButton(true);
       } else {
         setShowButton(false);
@@ -29,24 +29,22 @@ export default function ScrollToTop() {
   return (
     <>
       {showButton && (
-        <Tooltip title="Quay về đầu trang" arrow>
-          <IconButton
-            onClick={scrollToTop}
-            size="large"
-            sx={{
-              backgroundColor: "text.light",
-              boxShadow: "0 0 3px black",
-              color: "text.main",
-              position: "sticky",
-              top: "90vh",
-              left: "1rem",
-              zIndex: 100,
-              opacity: 0.6,
-            }}
-          >
-            <ArrowUpwardIcon />
-          </IconButton>
-        </Tooltip>
+        <IconButton
+          onClick={scrollToTop}
+          size="large"
+          sx={{
+            border: 1,
+            borderColor: "text.main",
+            color: "text.main",
+            opacity: 0.7,
+            position: "sticky",
+            top: "93%",
+            left: "1%",
+            zIndex: 9999,
+          }}
+        >
+          <ArrowUpwardIcon />
+        </IconButton>
       )}
     </>
   );

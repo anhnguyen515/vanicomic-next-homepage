@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
+import ScrollToTop from "components/common/ScrollToTop";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -71,96 +72,98 @@ export default function ChapterNavbar({ chapter }) {
   }, [scrollDown]);
 
   return (
-    <AppBar
-      elevation={0}
-      color="sub"
-      position="sticky"
-      sx={{
-        top: 88,
-        transition: "all 0.3s",
-        opacity: scrollDown ? 0 : 1,
-        zIndex: scrollDown ? -1 : 1,
-      }}
-    >
-      <Box
+    <>
+      <AppBar
+        elevation={0}
+        color="sub"
+        position="sticky"
         sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-around",
-          padding: 1,
-          gap: 2,
-          flexWrap: "wrap",
+          top: 88,
+          transition: "opacity 0.3s",
+          opacity: scrollDown ? 0 : 1,
+          zIndex: scrollDown ? -1 : 1,
         }}
       >
-        <Breadcrumbs sx={{ color: "text.main" }}>
-          <Link href={`/comic/${chapter.comic.id}/1`} passHref>
-            <Typography
-              fontSize="1.2rem"
-              sx={{ cursor: "pointer", "&:hover": { color: "text.light" } }}
-            >
-              {chapter.comic.name}
-            </Typography>
-          </Link>
-          <Typography color="text.light" fontSize="1.2rem">
-            {chapter.title}
-          </Typography>
-        </Breadcrumbs>
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "space-around",
+            padding: 1,
+            gap: 2,
+            flexWrap: "wrap",
           }}
         >
-          <IconButton
-            color="text"
-            disabled={chapter.chap_num === minChapNum ? true : false}
-            onClick={() => {
-              router.push(`/comic/${slug}/chapter/${chapter.chap_num - 1}`);
-              setCurrChapter(chapter.chap_num - 1);
+          <Breadcrumbs sx={{ color: "text.main" }}>
+            <Link href={`/comic/${chapter.comic.id}/1`} passHref>
+              <Typography
+                fontSize="1.2rem"
+                sx={{ cursor: "pointer", "&:hover": { color: "text.light" } }}
+              >
+                {chapter.comic.name}
+              </Typography>
+            </Link>
+            <Typography color="text.light" fontSize="1.2rem">
+              {chapter.title}
+            </Typography>
+          </Breadcrumbs>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <ArrowLeftIcon fontSize="large" />
-          </IconButton>
-          <FormControl sx={{ minWidth: "20rem" }} size="small">
-            <Select
-              value={currChapter}
-              onChange={handleChange}
-              sx={{
-                color: "text.main",
-                "& .MuiSvgIcon-root": {
-                  color: "text.main",
-                },
-              }}
-              MenuProps={{
-                PaperProps: { sx: { maxHeight: "20rem" } },
+            <IconButton
+              color="text"
+              disabled={chapter.chap_num === minChapNum ? true : false}
+              onClick={() => {
+                router.push(`/comic/${slug}/chapter/${chapter.chap_num - 1}`);
+                setCurrChapter(chapter.chap_num - 1);
               }}
             >
-              {chapters.map((chapter) => (
-                <MenuItem
-                  key={chapter.id}
-                  value={chapter.chap_num}
-                  onClick={() =>
-                    router.push(`/comic/${slug}/chapter/${chapter.chap_num}`)
-                  }
-                >
-                  <Typography fontWeight={500}>{chapter.title}</Typography>
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <IconButton
-            color="text"
-            disabled={chapter.chap_num === maxChapNum ? true : false}
-            onClick={() => {
-              router.push(`/comic/${slug}/chapter/${chapter.chap_num + 1}`);
-              setCurrChapter(chapter.chap_num + 1);
-            }}
-          >
-            <ArrowRightIcon fontSize="large" />
-          </IconButton>
+              <ArrowLeftIcon fontSize="large" />
+            </IconButton>
+            <FormControl sx={{ minWidth: "20rem" }} size="small">
+              <Select
+                value={currChapter}
+                onChange={handleChange}
+                sx={{
+                  color: "text.main",
+                  "& .MuiSvgIcon-root": {
+                    color: "text.main",
+                  },
+                }}
+                MenuProps={{
+                  PaperProps: { sx: { maxHeight: "20rem" } },
+                }}
+              >
+                {chapters.map((chapter) => (
+                  <MenuItem
+                    key={chapter.id}
+                    value={chapter.chap_num}
+                    onClick={() =>
+                      router.push(`/comic/${slug}/chapter/${chapter.chap_num}`)
+                    }
+                  >
+                    <Typography fontWeight={500}>{chapter.title}</Typography>
+                  </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+            <IconButton
+              color="text"
+              disabled={chapter.chap_num === maxChapNum ? true : false}
+              onClick={() => {
+                router.push(`/comic/${slug}/chapter/${chapter.chap_num + 1}`);
+                setCurrChapter(chapter.chap_num + 1);
+              }}
+            >
+              <ArrowRightIcon fontSize="large" />
+            </IconButton>
+          </Box>
         </Box>
-      </Box>
-    </AppBar>
+      </AppBar>
+    </>
   );
 }

@@ -69,15 +69,11 @@ export default function Home({ comics, genres }) {
           <Box mt={3}>
             <Grid container spacing={5}>
               <Grid item xs={12} lg={6}>
-                <Divider textAlign="left">
-                  <SubCategoryTitle>Truyện Hot</SubCategoryTitle>
-                </Divider>
+                <SubCategoryTitle>Truyện Hot</SubCategoryTitle>
                 <HotComicsSection comics={comics} />
               </Grid>
               <Grid item xs={12} lg={6}>
-                <Divider textAlign="left">
-                  <SubCategoryTitle>Mục gì đó</SubCategoryTitle>
-                </Divider>
+                <SubCategoryTitle>Mục gì đó</SubCategoryTitle>
               </Grid>
             </Grid>
           </Box>

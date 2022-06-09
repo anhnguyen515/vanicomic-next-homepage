@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["i.vnvl.net", "wcommunity-phinf.pstatic.net"],
+    domains: ["i.vnvl.net", "wcommunity-phinf.pstatic.net", "dummyimage.com"],
   },
 };
 

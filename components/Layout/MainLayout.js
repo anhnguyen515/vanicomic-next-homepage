@@ -7,7 +7,7 @@ import React from "react";
 export default function MainLayout({ children }) {
   return (
     <>
-      {/* <ScrollToTop /> */}
+      <ScrollToTop />
       <Box
         style={{
           display: "flex",

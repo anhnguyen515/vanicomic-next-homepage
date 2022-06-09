@@ -18,7 +18,6 @@ export default function ChapterCard({ chapter }) {
           borderBottom: 1,
           borderColor: "text.light",
           cursor: "pointer",
-          pl: 1,
           pr: 1,
           "&:first-of-type": {
             borderTop: 1,
