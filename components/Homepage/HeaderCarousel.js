@@ -101,6 +101,8 @@ export default function HeaderCarousel({ comics }) {
             >
               <Box
                 sx={{
+                  border: 1,
+                  borderColor: "text.light",
                   position: "relative",
                   width: {
                     xs: "70%",

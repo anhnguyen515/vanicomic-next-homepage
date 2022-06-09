@@ -20,7 +20,7 @@ export default function ChapterNavbar({ chapter }) {
   const { slug } = router.query;
   const [chapters, setChapters] = useState([]);
   const [currChapter, setCurrChapter] = useState(chapter.chap_num);
-  const [scrollDir, setScrollDir] = useState("up");
+  const [scrollDown, setScrollDown] = useState(false);
 
   const chapNumArr = chapters.map((chapter) => chapter.chap_num);
   const minChapNum = Math.min(...chapNumArr);
@@ -53,7 +53,7 @@ export default function ChapterNavbar({ chapter }) {
         ticking = false;
         return;
       }
-      setScrollDir(scrollY > lastScrollY ? "down" : "up");
+      setScrollDown(scrollY > lastScrollY ? true : false);
       lastScrollY = scrollY > 0 ? scrollY : 0;
       ticking = false;
     };
@@ -68,7 +68,7 @@ export default function ChapterNavbar({ chapter }) {
     window.addEventListener("scroll", onScroll);
 
     return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollDir]);
+  }, [scrollDown]);
 
   return (
     <AppBar
@@ -78,8 +78,8 @@ export default function ChapterNavbar({ chapter }) {
       sx={{
         top: 88,
         transition: "all 0.3s",
-        opacity: scrollDir == "down" ? 0 : 1,
-        zIndex: scrollDir == "down" ? -1 : 1,
+        opacity: scrollDown ? 0 : 1,
+        zIndex: scrollDown ? -1 : 1,
       }}
     >
       <Box

@@ -1,13 +1,16 @@
-import { Box, Button, Typography } from "@mui/material";
-import React from "react";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import GroupIcon from "@mui/icons-material/Group";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import GradeIcon from "@mui/icons-material/Grade";
+import GroupIcon from "@mui/icons-material/Group";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import { Box, Button, Typography } from "@mui/material";
+import ComicStatus from "components/common/ComicStatus";
+import React from "react";
 import { getComicStatus, getWeekday, numberFormat } from "utility/utils";
 
 export default function InfoSection({ comic }) {
+  const today = new Date().getDay();
+
   return (
     <>
       <Box
@@ -44,17 +47,22 @@ export default function InfoSection({ comic }) {
           </Typography>
         </Box>
         {/* ngày ra chương mới mỗi tuần */}
-        {comic.comic_status !== "F" ? (
-          <Box>
-            <Typography fontWeight={500} fontSize="1.5rem" lineHeight="1.5rem">
+        {comic.comic_status === "C" ? (
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Typography fontWeight={500} fontSize="2rem" lineHeight="2rem">
               {getWeekday(comic.comic_weekday).text} hàng tuần
             </Typography>
+            {comic.comic_status === "C" &&
+              getWeekday(comic.comic_weekday).index === today && (
+                <ComicStatus>{comic.comic_status}</ComicStatus>
+              )}
           </Box>
         ) : (
-          <Box>
-            <Typography fontWeight={500} fontSize="1.5rem" lineHeight="1.5rem">
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Typography fontWeight={500} fontSize="2rem" lineHeight="2rem">
               {getComicStatus(comic.comic_status)}
             </Typography>
+            <ComicStatus>{comic.comic_status}</ComicStatus>
           </Box>
         )}
         {/* tóm tắt truyện */}
