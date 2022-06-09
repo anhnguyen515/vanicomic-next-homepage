@@ -1,12 +1,14 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Box, Divider, Drawer, IconButton } from "@mui/material";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
 import * as React from "react";
 import NavAuth from "./NavAuth";
-import NavLink from "./NavLink";
 import NavAuthDropdown from "./NavAuthDropdown";
-import NavSearch from "./NavSearch";
+import NavLink from "./NavLink";
 import NavPublish from "./NavPublish";
+import NavSearch from "./NavSearch";
 
 export default function TemporaryDrawer() {
   const [state, setState] = React.useState(false);

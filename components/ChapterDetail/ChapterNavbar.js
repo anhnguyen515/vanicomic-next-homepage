@@ -23,6 +23,10 @@ export default function ChapterNavbar({ chapter }) {
   const [offset, setOffset] = useState(0);
   const prevOffset = useRef();
 
+  const chapNumArr = chapters.map((chapter) => chapter.chap_num);
+  const minChapNum = Math.min(...chapNumArr);
+  const maxChapNum = Math.max(...chapNumArr);
+
   const handleChange = (event) => {
     setCurrChapter(event.target.value);
   };
@@ -52,7 +56,7 @@ export default function ChapterNavbar({ chapter }) {
       position="sticky"
       sx={{
         top: 88,
-        transition: "all 0.5s",
+        transition: "all 0.3s",
         opacity: offset > prevOffset.current ? 0 : 1,
         zIndex: offset > prevOffset.current ? -1 : 1,
       }}
@@ -87,7 +91,14 @@ export default function ChapterNavbar({ chapter }) {
             justifyContent: "center",
           }}
         >
-          <IconButton color="text">
+          <IconButton
+            color="text"
+            disabled={chapter.chap_num === minChapNum ? true : false}
+            onClick={() => {
+              router.push(`/comic/${slug}/chapter/${chapter.chap_num - 1}`);
+              setCurrChapter(chapter.chap_num - 1);
+            }}
+          >
             <ArrowLeftIcon fontSize="large" />
           </IconButton>
           <FormControl sx={{ minWidth: "20rem" }} size="small">
@@ -109,7 +120,7 @@ export default function ChapterNavbar({ chapter }) {
                   key={chapter.id}
                   value={chapter.chap_num}
                   onClick={() =>
-                    router.push(`/comic/${slug}/chapter/${chapter.id}`)
+                    router.push(`/comic/${slug}/chapter/${chapter.chap_num}`)
                   }
                 >
                   <Typography fontWeight={500}>{chapter.title}</Typography>
@@ -117,7 +128,14 @@ export default function ChapterNavbar({ chapter }) {
               ))}
             </Select>
           </FormControl>
-          <IconButton color="text">
+          <IconButton
+            color="text"
+            disabled={chapter.chap_num === maxChapNum ? true : false}
+            onClick={() => {
+              router.push(`/comic/${slug}/chapter/${chapter.chap_num + 1}`);
+              setCurrChapter(chapter.chap_num + 1);
+            }}
+          >
             <ArrowRightIcon fontSize="large" />
           </IconButton>
         </Box>

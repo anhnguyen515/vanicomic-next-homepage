@@ -1,7 +1,6 @@
 html {
   box-sizing: border-box;
   font-size: calc(12px + (18 - 12) * ((100vw - 600px) / (1920 - 600)));
-  scrollbar-width: thin;
 }
 
 body {

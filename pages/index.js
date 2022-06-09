@@ -1,3 +1,4 @@
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import {
   Box,
   Button,
@@ -6,19 +7,17 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import HeadPage from "components/common/HeadPage";
-import { BRAND_NAME } from "utility/constants";
-import HeaderCarousel from "components/Homepage/HeaderCarousel";
-import axiosClient from "utility/axiosConfig";
-import ComicSquareCard from "components/common/ComicSquareCard";
-import WeeklySection from "components/Homepage/WeeklySection";
-import NewComicsSection from "components/Homepage/NewComicsSection";
 import CategoryTitle from "components/common/CategoryTitle";
+import ComicSquareCard from "components/common/ComicSquareCard";
+import HeadPage from "components/common/HeadPage";
 import SubCategoryTitle from "components/common/SubCategoryTitle";
 import GenresSection from "components/Homepage/GenresSection";
+import HeaderCarousel from "components/Homepage/HeaderCarousel";
 import HotComicsSection from "components/Homepage/HotComicsSection";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import NewComicsSection from "components/Homepage/NewComicsSection";
+import WeeklySection from "components/Homepage/WeeklySection";
 import { getAllComics, getAllGenres } from "utility/apis";
+import { BRAND_NAME } from "utility/constants";
 
 export async function getServerSideProps() {
   const comics = await getAllComics();

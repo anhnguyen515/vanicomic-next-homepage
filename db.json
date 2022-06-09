@@ -1015,6 +1015,19 @@
       "created_at": "06/07/2022",
       "updated_at": "06/03/2022",
       "removed": false
+    },
+    {
+      "id": 26,
+      "title": "Tựa đề chương 13",
+      "slug": "19-13",
+      "comicId": 19,
+      "chap_num": 13,
+      "content": [],
+      "sound": null,
+      "likes": 3489164,
+      "created_at": "06/09/2022",
+      "updated_at": "06/09/2022",
+      "removed": false
     }
   ],
   "comments": [

@@ -1,4 +1,7 @@
-import { AppBar, Container, Toolbar, Box } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Container from "@mui/material/Container";
+import Toolbar from "@mui/material/Toolbar";
+import Box from "@mui/material/Box";
 import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";

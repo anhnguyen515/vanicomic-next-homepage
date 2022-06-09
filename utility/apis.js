@@ -30,13 +30,13 @@ export function getAllComicChapters(slug) {
     .then((res) => res.data);
 }
 
-export function getChapterDetail(slug) {
+export function getChapterDetail(comic_slug, chap_num) {
   return axiosClient
-    .get(`chapters/${slug}?_expand=comic`)
+    .get(`chapters?comicId=${comic_slug}&chap_num=${chap_num}&_expand=comic`)
     .then((res) => res.data);
 }
 
-export function getChapterComments(slug, page = 1) {
+export function getChapterComments(slug) {
   return axiosClient
     .get(`comments?chapterId=${slug}&_expand=user`)
     .then((res) => res.data);

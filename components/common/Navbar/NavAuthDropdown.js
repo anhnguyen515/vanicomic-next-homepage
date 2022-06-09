@@ -1,16 +1,8 @@
-import FacebookIcon from "@mui/icons-material/Facebook";
-import FeedIcon from "@mui/icons-material/Feed";
-import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import MenuBookIcon from "@mui/icons-material/MenuBook";
-import TabletMacIcon from "@mui/icons-material/TabletMac";
-import {
-  Box,
-  Divider,
-  ListItemIcon,
-  ListItemText,
-  Menu,
-  MenuItem,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import ListItemText from "@mui/material/ListItemText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 import * as React from "react";
 
 export default function NavAuthDropdown({ children }) {
