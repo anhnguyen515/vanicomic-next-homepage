@@ -1,15 +1,14 @@
-import { Box, Chip, IconButton, Typography } from "@mui/material";
-import { getWeekday, numberFormat } from "utility/utils";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookF,
-  faTwitter,
   faRedditAlien,
+  faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { Box, Chip, IconButton, Typography } from "@mui/material";
 import React from "react";
+import { getWeekday, numberFormat } from "utility/utils";
 
 export default function InfoSection({ chapter, comic }) {
   return (

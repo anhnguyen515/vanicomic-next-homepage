@@ -1,17 +1,16 @@
-import React from "react";
 import { CacheProvider } from "@emotion/react";
-import { ThemeProvider, CssBaseline } from "@mui/material";
-
-import createEmotionCache from "utility/createEmotionCache";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import React from "react";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import { lightTheme } from "styles/theme/theme";
-import "../styles/globals.css";
+import createEmotionCache from "utility/createEmotionCache";
 import MainLayout from "../components/Layout/MainLayout";
+import "../styles/globals.css";
 
 {
   /* react-slick carousel */
 }
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const clientSideEmotionCache = createEmotionCache();
 

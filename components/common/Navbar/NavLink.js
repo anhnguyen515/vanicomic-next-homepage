@@ -8,7 +8,7 @@ export default function NavLink() {
   const router = useRouter();
 
   const generalStyle = {
-    fontSize: "1.2rem",
+    fontSize: "1.1rem",
     borderRadius: 1,
     fontWeight: 500,
     "&:hover": {

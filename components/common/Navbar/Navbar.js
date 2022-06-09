@@ -13,11 +13,10 @@ export default function Navbar() {
   return (
     <>
       <AppBar
-        position="sticky"
+        position="static"
         color="background"
         elevation={0}
         variant="outlined"
-        sx={{ top: 0 }}
       >
         <Container maxWidth="2xl">
           <Toolbar>

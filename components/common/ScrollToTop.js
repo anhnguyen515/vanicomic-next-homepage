@@ -1,5 +1,5 @@
-import { Button, IconButton, Tooltip } from "@mui/material";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
+import { IconButton } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 export default function ScrollToTop() {
@@ -36,7 +36,7 @@ export default function ScrollToTop() {
             border: 1,
             borderColor: "text.main",
             color: "text.main",
-            opacity: 0.7,
+            transition: "all 0.5s",
             position: "sticky",
             top: "93%",
             left: "1%",

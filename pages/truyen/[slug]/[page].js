@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Grid, Pagination } from "@mui/material";
+import { Box, Container, Grid, Pagination } from "@mui/material";
 import AlsoRead from "components/ComicDetail/AlsoRead";
 import ChaptersList from "components/ComicDetail/ChaptersList";
 import Header from "components/ComicDetail/Header";
@@ -48,7 +48,7 @@ export default function ComicDetail({
   const [currPage, setCurrPage] = React.useState(+page);
   const handleChange = (event, value) => {
     setCurrPage(value);
-    router.push(`/comic/${slug}/${value}`);
+    router.push(`/truyen/${slug}/${value}`);
   };
   return (
     <>

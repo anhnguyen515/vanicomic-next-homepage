@@ -10,7 +10,7 @@ import { numberFormat } from "utility/utils";
 export default function ComicRectangleCard({ comic }) {
   return (
     <>
-      <Link href={`/comic/${comic.id}/1`} passHref>
+      <Link href={`/truyen/${comic.id}/1`} passHref>
         <Card
           elevation={0}
           variant="outlined"

@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function ChapterCard({ chapter }) {
   return (
     <Link
-      href={`/comic/${chapter.comic.id}/chapter/${chapter.chap_num}`}
+      href={`/truyen/${chapter.comic.id}/chuong/${chapter.chap_num}`}
       passHref
     >
       <Box

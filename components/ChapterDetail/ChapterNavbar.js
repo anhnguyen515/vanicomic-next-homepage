@@ -10,7 +10,6 @@ import {
 } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
-import ScrollToTop from "components/common/ScrollToTop";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -78,7 +77,7 @@ export default function ChapterNavbar({ chapter }) {
         color="sub"
         position="sticky"
         sx={{
-          top: 88,
+          top: 0,
           transition: "opacity 0.3s",
           opacity: scrollDown ? 0 : 1,
           zIndex: scrollDown ? -1 : 1,
@@ -95,7 +94,7 @@ export default function ChapterNavbar({ chapter }) {
           }}
         >
           <Breadcrumbs sx={{ color: "text.main" }}>
-            <Link href={`/comic/${chapter.comic.id}/1`} passHref>
+            <Link href={`/truyen/${chapter.comic.id}/1`} passHref>
               <Typography
                 fontSize="1.2rem"
                 sx={{ cursor: "pointer", "&:hover": { color: "text.light" } }}
@@ -118,7 +117,7 @@ export default function ChapterNavbar({ chapter }) {
               color="text"
               disabled={chapter.chap_num === minChapNum ? true : false}
               onClick={() => {
-                router.push(`/comic/${slug}/chapter/${chapter.chap_num - 1}`);
+                router.push(`/truyen/${slug}/chuong/${chapter.chap_num - 1}`);
                 setCurrChapter(chapter.chap_num - 1);
               }}
             >
@@ -143,7 +142,7 @@ export default function ChapterNavbar({ chapter }) {
                     key={chapter.id}
                     value={chapter.chap_num}
                     onClick={() =>
-                      router.push(`/comic/${slug}/chapter/${chapter.chap_num}`)
+                      router.push(`/truyen/${slug}/chuong/${chapter.chap_num}`)
                     }
                   >
                     <Typography fontWeight={500}>{chapter.title}</Typography>
@@ -155,7 +154,7 @@ export default function ChapterNavbar({ chapter }) {
               color="text"
               disabled={chapter.chap_num === maxChapNum ? true : false}
               onClick={() => {
-                router.push(`/comic/${slug}/chapter/${chapter.chap_num + 1}`);
+                router.push(`/truyen/${slug}/chuong/${chapter.chap_num + 1}`);
                 setCurrChapter(chapter.chap_num + 1);
               }}
             >
