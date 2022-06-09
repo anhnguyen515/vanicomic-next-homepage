@@ -12,7 +12,7 @@ import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getAllComicChapters } from "utility/apis";
 
 export default function ChapterNavbar({ chapter }) {
@@ -20,8 +20,7 @@ export default function ChapterNavbar({ chapter }) {
   const { slug } = router.query;
   const [chapters, setChapters] = useState([]);
   const [currChapter, setCurrChapter] = useState(chapter.chap_num);
-  const [offset, setOffset] = useState(0);
-  const prevOffset = useRef();
+  const [scrollDir, setScrollDir] = useState("up");
 
   const chapNumArr = chapters.map((chapter) => chapter.chap_num);
   const minChapNum = Math.min(...chapNumArr);
@@ -32,22 +31,44 @@ export default function ChapterNavbar({ chapter }) {
   };
 
   useEffect(() => {
-    window.onscroll = () => {
-      setOffset(window.pageYOffset);
-    };
-  }, []);
-
-  useEffect(() => {
-    prevOffset.current = offset;
-  }, [offset]);
-
-  useEffect(() => {
     async function getAllChapters() {
       const data = await getAllComicChapters(slug);
       setChapters(data);
     }
     getAllChapters();
   }, []);
+
+  {
+    /* check scroll direction */
+  }
+  useEffect(() => {
+    const threshold = 0;
+    let lastScrollY = window.pageYOffset;
+    let ticking = false;
+
+    const updateScrollDir = () => {
+      const scrollY = window.pageYOffset;
+
+      if (Math.abs(scrollY - lastScrollY) < threshold) {
+        ticking = false;
+        return;
+      }
+      setScrollDir(scrollY > lastScrollY ? "down" : "up");
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollDir);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollDir]);
 
   return (
     <AppBar
@@ -57,8 +78,8 @@ export default function ChapterNavbar({ chapter }) {
       sx={{
         top: 88,
         transition: "all 0.3s",
-        opacity: offset > prevOffset.current ? 0 : 1,
-        zIndex: offset > prevOffset.current ? -1 : 1,
+        opacity: scrollDir == "down" ? 0 : 1,
+        zIndex: scrollDir == "down" ? -1 : 1,
       }}
     >
       <Box
