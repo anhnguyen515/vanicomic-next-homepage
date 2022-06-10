@@ -1,13 +1,12 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { getAllComics, getAllGenres } from "utility/apis";
+import Tab from "@mui/material/Tab";
+import Tabs from "@mui/material/Tabs";
 import HeadPage from "components/common/HeadPage";
-import { BRAND_NAME } from "utility/constants";
 import GenrePanel from "components/GenresPage/GenrePanel";
+import PropTypes from "prop-types";
+import * as React from "react";
+import { getAllComics, getAllGenres } from "utility/apis";
+import { BRAND_NAME } from "utility/constants";
 
 export async function getServerSideProps() {
   const comics = await getAllComics();
@@ -66,7 +65,6 @@ export default function AllGenres({ comics, genres }) {
       >
         <Tabs
           orientation="vertical"
-          variant="scrollable"
           value={value}
           onChange={handleChange}
           aria-label="Vertical tabs example"

@@ -10,23 +10,35 @@ export function getAllGenres() {
   return axiosClient.get(`genres`).then((res) => res.data);
 }
 
-export function getComicDetail(slug) {
-  return axiosClient
-    .get(`comics/${slug}?_expand=user&_expand=genre`)
-    .then((res) => res.data);
-}
-
-export function getComicChapters(slug, page = 1) {
+export function getComicsByGenre(genre_slug, page = 1) {
   return axiosClient
     .get(
-      `chapters?_expand=comic&comicId=${slug}&_page=${page}&_sort=chap_num&_order=desc`
+      `comics?genreId=${genre_slug}&_expand=genre&_expand=user&_page=${page}&_limit=5`
     )
     .then((res) => res.data);
 }
 
-export function getAllComicChapters(slug) {
+export function getGenreDetail(genre_slug) {
+  return axiosClient.get(`genres/${genre_slug}`).then((res) => res.data);
+}
+
+export function getComicDetail(comic_slug) {
   return axiosClient
-    .get(`chapters?comicId=${slug}&_sort=chap_num&_order=desc`)
+    .get(`comics/${comic_slug}?_expand=user&_expand=genre`)
+    .then((res) => res.data);
+}
+
+export function getComicChapters(comic_slug, page = 1) {
+  return axiosClient
+    .get(
+      `chapters?_expand=comic&comicId=${comic_slug}&_page=${page}&_sort=chap_num&_order=desc`
+    )
+    .then((res) => res.data);
+}
+
+export function getAllComicChapters(comic_slug) {
+  return axiosClient
+    .get(`chapters?comicId=${comic_slug}&_sort=chap_num&_order=desc`)
     .then((res) => res.data);
 }
 
@@ -36,8 +48,8 @@ export function getChapterDetail(comic_slug, chap_num) {
     .then((res) => res.data);
 }
 
-export function getChapterComments(slug) {
+export function getChapterComments(chapter_slug) {
   return axiosClient
-    .get(`comments?chapterId=${slug}&_expand=user`)
+    .get(`comments?chapterId=${chapter_slug}&_expand=user`)
     .then((res) => res.data);
 }
