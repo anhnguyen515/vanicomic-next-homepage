@@ -32,15 +32,16 @@ export default function ScrollToTop() {
         <Box
           sx={{
             display: "inline-block",
-            pl: {
+            ml: {
+              xs: 2,
+              xl: 5,
+            },
+            mb: {
               xs: 2,
               xl: 5,
             },
             position: "sticky",
-            top: {
-              xs: "94%",
-              xl: "90%",
-            },
+            top: "90%",
             zIndex: 9999,
           }}
         >
