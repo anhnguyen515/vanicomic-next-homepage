@@ -1,4 +1,4 @@
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import {
   Box,
   Button,
@@ -101,7 +101,7 @@ export default function Home({ comics, genres }) {
                 <Button
                   variant="contained"
                   size="large"
-                  endIcon={<ArrowForwardIosIcon />}
+                  endIcon={<ChevronRightIcon />}
                   sx={{ mt: 3 }}
                 >
                   Đăng tải ngay

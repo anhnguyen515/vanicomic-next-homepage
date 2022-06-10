@@ -46,13 +46,13 @@ export default function WeeklySection({ comics }) {
 
   return (
     <Box sx={{ width: "100%" }}>
-      <Box>
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
-          centered
-          //   variant="scrollable"
+          variant="scrollable"
+          scrollButtons="auto"
         >
           <Tab label="Thứ Hai" {...a11yProps(0)} />
           <Tab label="Thứ Ba" {...a11yProps(1)} />

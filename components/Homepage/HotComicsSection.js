@@ -6,7 +6,7 @@ export default function HotComicsSection({ comics }) {
   return (
     <>
       <Grid container spacing={2}>
-        {comics.slice(0, 6).map((comic) => (
+        {comics.slice(0, 5).map((comic) => (
           <Grid key={comic.id} item xs={12}>
             <ComicRectangleCard comic={comic} />
           </Grid>

@@ -22,7 +22,7 @@ export default function Header({ comic }) {
       <Box
         sx={{
           padding: 3,
-          backgroundImage: `linear-gradient(to bottom, rgba(41, 41, 41, 0.6), rgba(41, 41, 41, 0.6)),url(${comic.picture})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(41, 41, 41, 0.7), rgba(41, 41, 41, 0.7)),url(${comic.picture})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

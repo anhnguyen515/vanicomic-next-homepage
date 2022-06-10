@@ -79,10 +79,12 @@ export default function NavLink() {
       <Typography
         variant="h6"
         textTransform="uppercase"
-        sx={router.asPath.includes("/canvas") ? activeStyle : generalStyle}
+        sx={
+          router.asPath.includes("/moi-cap-nhat") ? activeStyle : generalStyle
+        }
       >
-        <Link href="/canvas">
-          <a style={linkStyle}>Canvas</a>
+        <Link href="/moi-cap-nhat">
+          <a style={linkStyle}>Mới cập nhật</a>
         </Link>
       </Typography>
     </Box>

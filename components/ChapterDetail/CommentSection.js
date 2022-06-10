@@ -3,7 +3,7 @@ import SubCategoryTitle from "components/common/SubCategoryTitle";
 import React, { useEffect, useState } from "react";
 import { getChapterComments } from "utility/apis";
 import CommentDisplay from "./CommentDisplay";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 export default function CommentSection({ comic, chapter }) {
   const [comments, setComments] = useState([]);
@@ -51,7 +51,7 @@ export default function CommentSection({ comic, chapter }) {
         <Button
           variant="outlined"
           color="secondary"
-          endIcon={<ArrowForwardIcon />}
+          endIcon={<ChevronRightIcon />}
         >
           Đến trang bình luận
         </Button>
