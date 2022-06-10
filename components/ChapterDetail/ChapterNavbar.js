@@ -77,10 +77,8 @@ export default function ChapterNavbar({ chapter }) {
         color="sub"
         position="sticky"
         sx={{
-          top: 0,
-          transition: "opacity 0.3s",
-          opacity: scrollDown ? 0 : 1,
-          zIndex: scrollDown ? -1 : 1,
+          top: scrollDown ? -100 : 0,
+          transition: "top 0.5s",
         }}
       >
         <Box

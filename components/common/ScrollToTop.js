@@ -1,5 +1,5 @@
-import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import { IconButton } from "@mui/material";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import { Box, IconButton } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 export default function ScrollToTop() {
@@ -29,22 +29,31 @@ export default function ScrollToTop() {
   return (
     <>
       {showButton && (
-        <IconButton
-          onClick={scrollToTop}
-          size="large"
+        <Box
           sx={{
-            border: 1,
-            borderColor: "text.main",
-            color: "text.main",
-            transition: "all 0.5s",
+            display: "inline-block",
+            pl: {
+              xs: 2,
+              xl: 5,
+            },
             position: "sticky",
-            top: "93%",
-            left: "1%",
+            top: {
+              xs: "94%",
+              xl: "90%",
+            },
             zIndex: 9999,
           }}
         >
-          <ArrowUpwardIcon />
-        </IconButton>
+          <IconButton
+            color="primary"
+            onClick={scrollToTop}
+            sx={{
+              boxShadow: "0 0 3px",
+            }}
+          >
+            <KeyboardArrowUpIcon />
+          </IconButton>
+        </Box>
       )}
     </>
   );

@@ -29,14 +29,15 @@ export default function ChapterDetail({ comic, comics, chapter }) {
       <HeadPage title={`${chapter[0].title} - ${comic.name}`} />
       <ChapterNavbar chapter={chapter[0]} />
       <Container maxWidth="2xl">
+        {/* hiện chương truyện */}
         <Box sx={{ p: 3 }}>
-          <Box mb={10}>
-            <ChapterSection chapter={chapter[0]} />
-          </Box>
-          {/* một vài thông tin của truyện và chương truyện */}
-          <Box mb={3}>
-            <InfoSection comic={comic} chapter={chapter[0]} />
-          </Box>
+          <ChapterSection chapter={chapter[0]} />
+        </Box>
+      </Container>
+      <Container maxWidth="xl">
+        {/* một vài thông tin của truyện và chương truyện */}
+        <Box sx={{ p: 3 }}>
+          <InfoSection comic={comic} chapter={chapter[0]} />
         </Box>
       </Container>
       {/* phần bình luận */}

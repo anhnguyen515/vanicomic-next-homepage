@@ -1,84 +1,42 @@
-import {
-  faFacebookF,
-  faRedditAlien,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import BookmarkAddIcon from "@mui/icons-material/BookmarkAdd";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { Box, Chip, IconButton, Typography } from "@mui/material";
+import { Avatar, Box, Chip, Typography } from "@mui/material";
 import React from "react";
-import { getWeekday, numberFormat } from "utility/utils";
+import { dateFormat, numberFormat } from "utility/utils";
 
-export default function InfoSection({ chapter, comic }) {
+export default function InfoSection({ chapter }) {
   return (
     <>
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
-          gap: 2,
+          gap: 5,
+          borderTop: 1,
+          borderBottom: 1,
+          pr: 1,
+          borderColor: "text.light",
         }}
       >
-        <Typography fontWeight={500} fontSize="1.5rem" lineHeight="1.5rem">
-          {getWeekday(comic.comic_weekday).text} hàng tuần
-        </Typography>
-        <Box sx={{ display: "flex", gap: 1 }}>
-          <Chip
-            icon={<FavoriteBorderIcon fontSize="small" />}
-            label={numberFormat(chapter.likes)}
-          />
-          <Chip
-            icon={<BookmarkAddIcon fontSize="small" />}
-            label="Theo dõi"
-            color="secondary"
-          />
+        <Avatar variant="square" sx={{ width: "8rem", height: "8rem" }} />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
+          <Typography variant="h6">{chapter.title}</Typography>
+          <Typography>{chapter.content.length} trang truyện</Typography>
         </Box>
-        <Typography>
-          Nếu bạn thích bộ truyện này, hãy chia sẻ nó để ủng hộ tác giả nhé! ^-^
+        <Chip
+          icon={<FavoriteBorderIcon />}
+          label={numberFormat(chapter.likes)}
+        />
+        <Typography ml="auto" color="text.main">
+          {dateFormat(chapter.created_at)}
         </Typography>
-        <Box sx={{ display: "flex", gap: 1 }}>
-          <Box>
-            <IconButton
-              sx={{
-                color: "text.light",
-                backgroundColor: "sub.main",
-                "&:hover": {
-                  backgroundColor: "#3C8FFF",
-                },
-              }}
-            >
-              <FontAwesomeIcon icon={faFacebookF} width={16} height={16} />
-            </IconButton>
-          </Box>
-          <Box>
-            <IconButton
-              sx={{
-                color: "text.light",
-                backgroundColor: "sub.main",
-                "&:hover": {
-                  backgroundColor: "#1A8CD8",
-                },
-              }}
-            >
-              <FontAwesomeIcon icon={faTwitter} width={16} height={16} />
-            </IconButton>
-          </Box>
-          <Box>
-            <IconButton
-              sx={{
-                color: "text.light",
-                backgroundColor: "sub.main",
-                "&:hover": {
-                  backgroundColor: "#FF4501",
-                },
-              }}
-            >
-              <FontAwesomeIcon icon={faRedditAlien} width={16} height={16} />
-            </IconButton>
-          </Box>
-        </Box>
+        <Typography># {chapter.chap_num}</Typography>
       </Box>
     </>
   );
